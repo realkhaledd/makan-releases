@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مَكَان Property OS — نظام التشغيل العقاري للوكالات</title>
+<meta name="description" content="MAKAN Property OS — نظام SaaS عقاري متكامل. محرك مطابقة ذكي، CRM احترافي، أتمتة كاملة. ابدأ تجربتك المجانية 14 يوم.">
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#060a14;--ink2:#090e1c;--ink3:#0d1526;
+  --blue:#1a3aff;--blue2:#2d4fff;--blue-lo:rgba(26,58,255,0.12);--blue-mid:rgba(26,58,255,0.06);
+  --gold:#f5a623;--gold2:#ffcf68;--gold-lo:rgba(245,166,35,0.10);
+  --teal:#00d4ff;--teal-lo:rgba(0,212,255,0.08);
+  --green:#00e676;--green-lo:rgba(0,230,118,0.1);
+  --red:#ff4444;--white:#fff;--mist:#e8eeff;--fog:#9aabcc;--slate:#3e4f72;
+  --glass:rgba(255,255,255,0.035);--glass2:rgba(255,255,255,0.06);
+  --line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.04);
+  --ar:'Cairo',sans-serif;--en:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--white);font-family:var(--ar);overflow-x:hidden;line-height:1.6}
+body.en{font-family:var(--en);direction:ltr}
+.ar{display:revert}.en-only{display:none!important}
+body.en .ar{display:none!important}body.en .en-only{display:revert!important}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:64px;display:flex;align-items:center;padding:0 48px;background:rgba(6,10,20,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--line);transition:all .3s}
+nav.scrolled{background:rgba(6,10,20,0.99);border-bottom-color:rgba(255,255,255,0.10)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-brand img{height:52px;width:auto;filter:brightness(0) invert(1)}
+/* Mobile-only CTA next to logo */
+.nav-cta-mobile{display:none;padding:8px 16px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;align-items:center;gap:7px;transition:all .2s;box-shadow:0 4px 16px rgba(26,58,255,.4);flex-shrink:0;white-space:nowrap}
+.nav-cta-mobile svg{flex-shrink:0}
+.nav-wordmark{font-weight:900;font-size:18px;color:var(--white);letter-spacing:-.02em;font-family:var(--ar)}
+.nav-sub{font-size:9px;color:var(--slate);letter-spacing:.1em;font-family:var(--en);text-transform:uppercase}
+.nav-center{display:flex;gap:6px;align-items:center;flex:1;justify-content:center}
+.nav-link{color:var(--fog);text-decoration:none;font-size:13px;font-weight:500;padding:6px 14px;border-radius:7px;transition:all .18s}
+.nav-link:hover{color:var(--white);background:var(--glass)}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.lang-toggle{display:flex;background:var(--glass);border:1px solid var(--line);border-radius:100px;padding:3px;gap:2px}
+.lang-btn{padding:4px 13px;border-radius:100px;font-size:11px;font-weight:700;border:none;cursor:pointer;background:transparent;color:var(--fog);font-family:var(--en);transition:all .18s}
+.lang-btn.active{background:var(--blue);color:#fff}
+.nav-login{padding:7px 16px;background:transparent;color:var(--fog);border:1px solid var(--line);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;display:flex;align-items:center;gap:6px;transition:all .18s}
+.nav-login:hover{color:var(--white);border-color:rgba(255,255,255,.22);background:var(--glass)}
+.nav-cta{padding:8px 20px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;display:flex;align-items:center;gap:7px;transition:all .2s;box-shadow:0 4px 16px rgba(26,58,255,.4)}
+.nav-cta:hover{background:var(--blue2);transform:translateY(-1px);box-shadow:0 8px 28px rgba(26,58,255,.5)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:100px 80px 60px;max-width:1360px;margin:0 auto;position:relative;z-index:2}
+.hero h1 br{display:block;margin-bottom:6px}
+.hero-bg{position:fixed;inset:0;pointer-events:none;z-index:0}
+.hero-bg::before{content:'';position:absolute;top:-20%;right:-10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(26,58,255,0.13) 0%,transparent 65%)}
+.hero-bg::after{content:'';position:absolute;bottom:-10%;left:-5%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.06) 0%,transparent 65%)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:100px;border:1px solid rgba(26,58,255,.3);background:rgba(26,58,255,.08);font-size:11px;font-weight:700;color:#7a9fff;letter-spacing:.04em;margin-bottom:22px}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);animation:blink 2.2s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(36px,3.5vw,60px);font-weight:700;line-height:1.28;letter-spacing:0;margin-bottom:20px}
+body:not(.en) .hero h1{font-family:var(--ar);line-height:1.4;letter-spacing:0}
+body.en .hero h1{font-family:var(--en);line-height:1.15;letter-spacing:-.025em}
+.grad-blue{background:linear-gradient(135deg,#7aa0ff,var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-green{background:linear-gradient(135deg,var(--green),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:16px;color:var(--fog);line-height:1.8;margin-bottom:36px;max-width:520px}
+body.en .hero-sub{font-family:var(--en)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--blue);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;box-shadow:0 6px 24px rgba(26,58,255,.4);transition:all .22s}
+.btn-primary:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 12px 36px rgba(26,58,255,.5)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--glass2);color:var(--white);border:1px solid var(--line);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:none;transition:all .22s}
+.btn-secondary:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2)}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0800;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;box-shadow:0 6px 24px rgba(245,166,35,.35);transition:all .22s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(245,166,35,.5)}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+.download-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:28px;margin-top:4px}
+.download-label{font-size:11px;color:var(--fog);font-weight:600;white-space:nowrap;margin-left:4px}
+.download-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:var(--white);font-size:13px;font-weight:700;text-decoration:none;transition:all .2s;white-space:nowrap}
+.download-btn:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.28);transform:translateY(-1px)}
+.download-btn-ghost{background:transparent;color:#6b7fa3;border-color:rgba(255,255,255,0.08)}
+.download-btn-ghost:hover{color:var(--white);background:rgba(255,255,255,0.06)}
+.chip-label{font-size:10px;padding:2px 7px;border-radius:100px;background:rgba(26,58,255,0.2);color:#7aa0ff;font-weight:600;font-family:var(--en)}
+.hero-stat{display:flex;flex-direction:column}
+.hero-stat-num{font-size:30px;font-weight:800;font-family:var(--en);line-height:1;margin-bottom:4px}
+.hero-stat-num.blue{color:#7aa0ff}.hero-stat-num.gold{color:var(--gold)}.hero-stat-num.green{color:var(--green)}
+.hero-stat-lbl{font-size:12px;color:var(--fog);font-weight:500;line-height:1.3}
+body.en .hero-stat-lbl{font-family:var(--en)}
+.hero-stat-sep{width:1px;background:var(--line);align-self:stretch;margin:4px 0}
+
+/* Hero product mockup */
+.hero-mock{position:relative;z-index:2}
+.mock-window{background:#080d1a;border:1px solid rgba(26,58,255,.2);border-radius:16px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04),0 0 60px rgba(26,58,255,.08)}
+.mock-bar{background:rgba(26,58,255,.06);border-bottom:1px solid rgba(26,58,255,.12);padding:10px 16px;display:flex;align-items:center;gap:6px}
+.mock-dot{width:10px;height:10px;border-radius:50%}
+.mock-dot:nth-child(1){background:#ff5f57}.mock-dot:nth-child(2){background:#febc2e}.mock-dot:nth-child(3){background:#28c840}
+.mock-title{margin-right:auto;font-size:10px;color:var(--slate);font-family:var(--en);letter-spacing:.04em}
+body.en .mock-title{margin-right:0;margin-left:auto}
+.mock-body{padding:18px}
+
+/* Dashboard mockup inside hero */
+.dash-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.dash-kpi{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.dash-kpi-num{font-family:var(--en);font-size:20px;font-weight:800;line-height:1;margin-bottom:3px}
+.dash-kpi-lbl{font-size:10px;color:var(--slate)}
+.dash-leads{display:flex;flex-direction:column;gap:6px}
+.dash-lead{display:flex;align-items:center;gap:10px;padding:9px 12px;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:8px;transition:border-color .2s}
+.dash-lead:first-child{border-color:rgba(0,230,118,.2);background:rgba(0,230,118,.03)}
+.dash-lead-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dash-lead-info{flex:1;min-width:0}
+.dash-lead-name{font-size:11.5px;font-weight:600;font-family:var(--en)}
+.dash-lead-meta{font-size:10px;color:var(--slate)}
+.dash-lead-pct{font-family:var(--en);font-size:15px;font-weight:800}
+
+/* ── LOGOS BAND ── */
+.logos-band{background:rgba(9,14,28,.8);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 48px;display:flex;align-items:center;gap:32px;overflow:hidden;position:relative;z-index:2}
+.logos-label{font-size:11px;color:var(--slate);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;font-family:var(--en)}
+.logos-track{flex:1;overflow:hidden}
+.logos-inner{display:flex;gap:36px;align-items:center;animation:marquee 18s linear infinite;white-space:nowrap}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.logo-item{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--fog);opacity:.55;white-space:nowrap;flex-shrink:0}
+
+/* ── SECTIONS ── */
+section{position:relative;z-index:2}
+.sec{max-width:1280px;margin:0 auto;padding:90px 60px}
+.sec-center{text-align:center}
+.sec-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7aa0ff;margin-bottom:16px;font-family:var(--en)}
+.sec-tag::before,.sec-tag::after{content:'';width:22px;height:2px;background:#7aa0ff;display:inline-block;border-radius:2px}
+.h2{font-size:clamp(30px,3vw,48px);font-weight:700;line-height:1.25;letter-spacing:0;margin-bottom:14px}
+body:not(.en) .h2{font-family:var(--ar);line-height:1.4;letter-spacing:0}
+body.en .h2{font-family:var(--en);line-height:1.15;letter-spacing:-.02em}
+.lead{font-size:15px;color:var(--fog);line-height:1.85;max-width:580px}
+body.en .lead{font-family:var(--en)}
+
+/* ── PROBLEM ── */
+.prob-sec{background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prob-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:40px}
+.prob-card{background:rgba(255,68,68,.04);border:1px solid rgba(255,68,68,.1);border-radius:14px;padding:26px;position:relative;overflow:hidden;transition:border-color .25s}
+.prob-card:hover{border-color:rgba(255,68,68,.28)}
+.prob-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red) 50%,transparent)}
+.prob-icon{width:42px;height:42px;background:rgba(255,68,68,.1);border:1px solid rgba(255,68,68,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:14px}
+.prob-card h3{font-size:15px;font-weight:700;margin-bottom:7px}
+body:not(.en) .prob-card h3{font-family:var(--ar)}
+body.en .prob-card h3{font-family:var(--en)}
+.prob-card p{font-size:13px;color:var(--fog);line-height:1.75}
+body:not(.en) .prob-card p{font-family:var(--ar)}
+body.en .prob-card p{font-family:var(--en)}
+.cost-box{background:rgba(255,68,68,.04);border:1px solid rgba(255,68,68,.14);border-radius:16px;padding:32px;display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+.cost-rows{flex:1;display:flex;flex-direction:column;gap:8px}
+.cost-row{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:8px;font-family:var(--en);font-size:13px}
+.cost-tool{color:var(--fog)}.cost-price{color:var(--red);font-weight:700}
+.cost-total{text-align:center;min-width:150px}
+.cost-total-label{font-size:10px;color:var(--fog);letter-spacing:.08em;text-transform:uppercase;font-family:var(--en);margin-bottom:6px}
+.cost-total-num{font-size:48px;font-weight:800;color:var(--red);line-height:1;font-family:var(--en)}
+.cost-total-sub{font-size:10px;color:rgba(255,68,68,.45);font-family:var(--en);margin-top:5px}
+
+/* ── FEATURES ── */
+.feat-sec{background:var(--ink)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feat-card{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:28px 24px;transition:all .3s;position:relative;overflow:hidden}
+.feat-card::before{content:'';position:absolute;inset:0;border-radius:16px;opacity:0;transition:opacity .3s}
+.feat-card:hover{transform:translateY(-4px)}
+.feat-card:hover::before{opacity:1}
+.c-blue{}.c-blue:hover{border-color:rgba(26,58,255,.4)}.c-blue::before{background:linear-gradient(135deg,rgba(26,58,255,.08),transparent)}
+.c-gold:hover{border-color:rgba(245,166,35,.4)}.c-gold::before{background:linear-gradient(135deg,rgba(245,166,35,.08),transparent)}
+.c-teal:hover{border-color:rgba(0,212,255,.4)}.c-teal::before{background:linear-gradient(135deg,rgba(0,212,255,.08),transparent)}
+.c-green:hover{border-color:rgba(0,230,118,.4)}.c-green::before{background:linear-gradient(135deg,rgba(0,230,118,.08),transparent)}
+.c-purple:hover{border-color:rgba(168,85,247,.4)}.c-purple::before{background:linear-gradient(135deg,rgba(168,85,247,.08),transparent)}
+.feat-icon{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;border:1px solid}
+.c-blue .feat-icon{background:var(--blue-lo);border-color:rgba(26,58,255,.2)}
+.c-gold .feat-icon{background:var(--gold-lo);border-color:rgba(245,166,35,.2)}
+.c-teal .feat-icon{background:var(--teal-lo);border-color:rgba(0,212,255,.2)}
+.c-green .feat-icon{background:var(--green-lo);border-color:rgba(0,230,118,.2)}
+.c-purple .feat-icon{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.2)}
+.feat-card h3{font-size:16px;font-weight:700;margin-bottom:9px;line-height:1.3}
+body:not(.en) .feat-card h3{font-family:var(--ar)}
+body.en .feat-card h3{font-family:var(--en)}
+.feat-card p{font-size:13px;color:var(--fog);line-height:1.8;margin-bottom:16px}
+body:not(.en) .feat-card p{font-family:var(--ar)}
+body.en .feat-card p{font-family:var(--en)}
+.feat-tag{display:inline-block;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:700;font-family:var(--en);letter-spacing:.06em}
+.c-blue .feat-tag{background:var(--blue-lo);color:#7aa0ff;border:1px solid rgba(26,58,255,.2)}
+.c-gold .feat-tag{background:var(--gold-lo);color:var(--gold);border:1px solid rgba(245,166,35,.2)}
+.c-teal .feat-tag{background:var(--teal-lo);color:var(--teal);border:1px solid rgba(0,212,255,.2)}
+.c-green .feat-tag{background:var(--green-lo);color:var(--green);border:1px solid rgba(0,230,118,.2)}
+.c-purple .feat-tag{background:rgba(168,85,247,.1);color:#c084fc;border:1px solid rgba(168,85,247,.2)}
+
+/* ── HOW IT WORKS ── */
+.how-sec{background:var(--ink2);border-top:1px solid var(--line)}
+.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.how-grid::before{content:'';position:absolute;top:32px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,var(--blue) 20%,var(--teal) 80%,transparent);z-index:0}
+body.en .how-grid::before{left:12%;right:12%}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 16px;position:relative;z-index:1}
+.how-num{width:64px;height:64px;border-radius:50%;border:2px solid;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;font-family:var(--en);margin-bottom:20px;background:var(--ink2)}
+.how-step:nth-child(1) .how-num{border-color:var(--blue);color:#7aa0ff;box-shadow:0 0 20px rgba(26,58,255,.3)}
+.how-step:nth-child(2) .how-num{border-color:var(--gold);color:var(--gold);box-shadow:0 0 20px rgba(245,166,35,.3)}
+.how-step:nth-child(3) .how-num{border-color:var(--teal);color:var(--teal);box-shadow:0 0 20px rgba(0,212,255,.3)}
+.how-step:nth-child(4) .how-num{border-color:var(--green);color:var(--green);box-shadow:0 0 20px rgba(0,230,118,.3)}
+.how-step h3{font-size:15px;font-weight:700;margin-bottom:8px}
+body:not(.en) .how-step h3{font-family:var(--ar)}
+body.en .how-step h3{font-family:var(--en)}
+.how-step p{font-size:13px;color:var(--fog);line-height:1.75}
+body:not(.en) .how-step p{font-family:var(--ar)}
+body.en .how-step p{font-family:var(--en)}
+
+/* ── MATCH ENGINE ── */
+.match-sec{background:var(--ink);border-top:1px solid var(--line)}
+.match-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.check-list{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.check-item{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--fog);line-height:1.65}
+body:not(.en) .check-item{font-family:var(--ar)}
+body.en .check-item{font-family:var(--en)}
+.check-ico{width:22px;height:22px;border-radius:50%;background:var(--green-lo);border:1px solid rgba(0,230,118,.25);color:var(--green);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.match-window{background:#080d1a;border:1px solid rgba(26,58,255,.2);border-radius:16px;overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.6),0 0 40px rgba(26,58,255,.07)}
+.match-bar{background:rgba(26,58,255,.06);border-bottom:1px solid rgba(26,58,255,.12);padding:10px 16px;display:flex;align-items:center;gap:6px}
+.m-d{width:10px;height:10px;border-radius:50%}
+.m-d:nth-child(1){background:#ff5f57}.m-d:nth-child(2){background:#febc2e}.m-d:nth-child(3){background:#28c840}
+.m-title{margin-right:auto;font-size:10px;color:var(--slate);font-family:var(--en)}
+body.en .m-title{margin-right:0;margin-left:auto}
+.match-body{padding:20px 18px}
+.search-row{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(26,58,255,.18);border-radius:9px;padding:9px 13px;margin-bottom:16px}
+.search-text{font-size:11px;color:var(--fog);flex:1;font-family:var(--en)}
+.search-btn{background:var(--blue);color:#fff;border:none;border-radius:6px;padding:4px 10px;font-size:10px;font-weight:700;font-family:var(--en);cursor:pointer}
+.match-hint{font-size:10px;color:var(--slate);font-family:var(--en);margin-bottom:12px}
+.match-hint span{color:var(--teal)}
+.result-row{display:flex;align-items:center;gap:12px;padding:10px 12px;background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:8px;margin-bottom:7px}
+.result-row:first-of-type{border-color:rgba(0,230,118,.2);background:rgba(0,230,118,.025)}
+.result-num{font-size:10px;color:var(--slate);font-family:var(--en);min-width:18px}
+.result-info{flex:1}
+.result-name{font-size:12px;font-weight:600;font-family:var(--en);margin-bottom:1px}
+.result-meta{font-size:10px;color:var(--slate);font-family:var(--en)}
+.result-pct{font-size:17px;font-weight:800;font-family:var(--en)}
+.result-row:nth-child(1) .result-pct{color:var(--green)}
+.result-row:nth-child(2) .result-pct{color:var(--gold)}
+.result-row:nth-child(3) .result-pct{color:#7aa0ff}
+.result-row:nth-child(4) .result-pct{color:var(--fog)}
+.match-foot{border-top:1px solid var(--line);padding:10px 18px;display:flex;justify-content:space-between;font-size:10px;color:var(--slate);font-family:var(--en)}
+.match-foot span{color:var(--teal)}
+
+/* ── SPEED ── */
+.speed-sec{background:var(--ink2);border-top:1px solid var(--line)}
+.speed-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-top:48px}
+.speed-box{border-radius:20px;padding:44px 32px;text-align:center}
+.speed-box.before{background:rgba(255,68,68,.05);border:1px solid rgba(255,68,68,.14)}
+.speed-box.after{background:rgba(0,230,118,.05);border:1px solid rgba(0,230,118,.14)}
+.speed-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-family:var(--en);margin-bottom:10px}
+.before .speed-label{color:var(--red)}.after .speed-label{color:var(--green)}
+.speed-big{font-size:68px;font-weight:800;font-family:var(--en);line-height:1;margin-bottom:12px}
+.before .speed-big{color:var(--red)}.after .speed-big{color:var(--green)}
+.speed-desc{font-size:13px;color:var(--fog);line-height:1.75}
+body:not(.en) .speed-desc{font-family:var(--ar)}
+body.en .speed-desc{font-family:var(--en)}
+.vs-circle{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0800;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:var(--en);flex-shrink:0;box-shadow:0 0 32px rgba(245,166,35,.35)}
+
+/* ── PRICING ── */
+.price-sec{background:var(--ink);border-top:1px solid var(--line)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.price-card{background:var(--glass);border:1px solid var(--line);border-radius:20px;padding:32px 28px;position:relative;overflow:hidden;transition:transform .3s}
+.price-card:hover{transform:translateY(-4px)}
+.price-card.featured{border-color:rgba(26,58,255,.45);background:linear-gradient(160deg,rgba(26,58,255,.1),rgba(26,58,255,.04));box-shadow:0 0 50px rgba(26,58,255,.13)}
+.price-card.ent{border-color:rgba(245,166,35,.3);background:linear-gradient(160deg,rgba(245,166,35,.07),rgba(245,166,35,.02))}
+.price-badge{position:absolute;top:16px;background:var(--blue);color:#fff;font-size:10px;font-weight:700;padding:3px 11px;border-radius:100px;font-family:var(--en);letter-spacing:.05em}
+body:not(.en) .price-badge{right:16px}
+body.en .price-badge{left:16px}
+.price-badge.gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0800}
+.price-tier{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fog);font-family:var(--en);margin-bottom:10px}
+.price-name{font-size:21px;font-weight:800;margin-bottom:5px}
+body:not(.en) .price-name{font-family:var(--ar)}
+body.en .price-name{font-family:var(--en)}
+.price-desc{font-size:12.5px;color:var(--fog);line-height:1.65;margin-bottom:24px}
+body:not(.en) .price-desc{font-family:var(--ar)}
+body.en .price-desc{font-family:var(--en)}
+.price-row{display:flex;align-items:baseline;gap:3px;margin-bottom:4px}
+.price-curr{font-family:var(--en);font-size:18px;font-weight:700;color:var(--fog)}
+.price-num{font-family:var(--en);font-size:48px;font-weight:800;line-height:1}
+.featured .price-num{color:#7aa0ff}
+.ent .price-num{font-size:26px;color:var(--gold)}
+.price-period{font-size:12px;color:var(--fog)}
+body:not(.en) .price-period{font-family:var(--ar)}
+body.en .price-period{font-family:var(--en)}
+.price-annual{font-size:11px;color:var(--fog);font-family:var(--en);margin-bottom:22px}
+.price-div{height:1px;background:var(--line);margin-bottom:20px}
+.price-feats{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
+.pf{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--fog)}
+body:not(.en) .pf{font-family:var(--ar)}
+body.en .pf{font-family:var(--en)}
+.pf.on{color:var(--mist)}
+.pf::before{content:'✓';font-size:10px;font-weight:700;color:var(--green);background:var(--green-lo);border:1px solid rgba(0,230,118,.18);width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pf.off::before{content:'—';color:var(--slate);background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.05)}
+.price-note{font-size:11px;color:var(--slate);text-align:center;margin-top:14px;font-family:var(--en)}
+
+/* ── TESTIMONIALS ── */
+.testi-sec{background:var(--ink2);border-top:1px solid var(--line)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.testi-card{background:var(--glass2);border:1px solid var(--line);border-radius:16px;padding:28px 24px;transition:border-color .25s}
+.testi-card:hover{border-color:rgba(26,58,255,.3)}
+.testi-card.gold-testi{border-color:rgba(245,166,35,.25);background:linear-gradient(135deg,rgba(245,166,35,.05),rgba(245,166,35,.01))}
+.stars{display:flex;gap:3px;margin-bottom:12px}
+.star{color:var(--gold);font-size:14px}
+.testi-quote{font-size:14px;color:var(--mist);line-height:1.8;margin-bottom:18px}
+body:not(.en) .testi-quote{font-family:var(--ar)}
+body.en .testi-quote{font-family:var(--en);font-style:italic}
+.testi-author{display:flex;align-items:center;gap:11px}
+.testi-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.testi-name{font-size:14px;font-weight:700;margin-bottom:2px}
+body:not(.en) .testi-name{font-family:var(--ar)}
+body.en .testi-name{font-family:var(--en)}
+.testi-role{font-size:11px;color:var(--fog);font-family:var(--en)}
+
+/* ── FAQ ── */
+.faq-sec{background:var(--ink);border-top:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:44px}
+.faq-item{background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:22px 20px;cursor:pointer;transition:border-color .2s}
+.faq-item:hover,.faq-item.open{border-color:rgba(26,58,255,.3)}
+.faq-row{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.faq-q{font-size:14px;font-weight:700;line-height:1.4}
+body:not(.en) .faq-q{font-family:var(--ar)}
+body.en .faq-q{font-family:var(--en)}
+.faq-ico{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-item.open .faq-ico{transform:rotate(45deg);background:var(--blue-lo);border-color:rgba(26,58,255,.3)}
+.faq-ans{font-size:13px;color:var(--fog);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s ease,margin .3s}
+body:not(.en) .faq-ans{font-family:var(--ar)}
+body.en .faq-ans{font-family:var(--en)}
+.faq-item.open .faq-ans{max-height:200px;margin-top:12px}
+
+/* ── CTA ── */
+.cta-sec{position:relative;z-index:2;background:radial-gradient(ellipse at 50% 0%,rgba(26,58,255,.18) 0%,transparent 65%);border-top:1px solid var(--line);padding:110px 60px;text-align:center}
+.cta-inner{max-width:820px;margin:0 auto}
+.cta-h2{font-size:clamp(34px,4vw,58px);font-weight:700;line-height:1.2;letter-spacing:0;margin-bottom:18px}
+body:not(.en) .cta-h2{font-family:var(--ar);line-height:1.4;letter-spacing:0}
+body.en .cta-h2{font-family:var(--en);letter-spacing:-.025em}
+.cta-p{font-size:15px;color:var(--fog);margin-bottom:36px;line-height:1.8;max-width:540px;margin-left:auto;margin-right:auto}
+body:not(.en) .cta-p{font-family:var(--ar)}
+body.en .cta-p{font-family:var(--en)}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.contact-row{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:52px}
+.contact-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--fog);text-decoration:none;transition:color .18s}
+.contact-item:hover{color:var(--white)}
+.final-stats{display:grid;grid-template-columns:repeat(5,1fr);background:var(--glass);border:1px solid var(--line);border-radius:16px;overflow:hidden;backdrop-filter:blur(12px)}
+.final-stat{padding:28px 20px;text-align:center;border-right:1px solid var(--line)}
+body.en .final-stat{border-right:none;border-left:1px solid var(--line)}
+.final-stat:last-child{border:none}
+body.en .final-stat:first-child{border:none}
+.final-num{display:block;font-size:34px;font-weight:800;font-family:var(--en);line-height:1;margin-bottom:7px}
+.final-stat:nth-child(1) .final-num{color:var(--gold)}
+.final-stat:nth-child(2) .final-num{color:var(--green)}
+.final-stat:nth-child(3) .final-num{color:var(--teal)}
+.final-stat:nth-child(4) .final-num{color:#7aa0ff}
+.final-stat:nth-child(5) .final-num{color:var(--gold2)}
+.final-lbl{font-size:11px;color:var(--fog);font-weight:500;line-height:1.4}
+body:not(.en) .final-lbl{font-family:var(--ar)}
+body.en .final-lbl{font-family:var(--en)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink2);border-top:1px solid var(--line);padding:32px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;position:relative;z-index:2}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-brand img{height:40px;filter:brightness(0) invert(1)}
+.footer-links{display:flex;gap:24px}
+.footer-link{font-size:12px;color:var(--slate);text-decoration:none;font-family:var(--en);transition:color .18s}
+.footer-link:hover{color:var(--fog)}
+.footer-contact{display:flex;gap:18px;align-items:center}
+.footer-contact a{font-size:12px;color:var(--slate);text-decoration:none;font-family:var(--en);transition:color .18s;display:flex;align-items:center;gap:5px}
+.footer-contact a:hover{color:var(--fog)}
+.footer-copy{font-size:11px;color:var(--slate);font-family:var(--en)}
+
+/* ── REVEAL ── */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.rev.vis{opacity:1;transform:none}
+.rev.d1{transition-delay:.07s}.rev.d2{transition-delay:.14s}
+.rev.d3{transition-delay:.21s}.rev.d4{transition-delay:.28s}
+
+/* ── MOBILE ── */
+/* ══════════════════════════════════════════════
+   MOBILE — FULL REDESIGN (max 768px)
+   ══════════════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* ── NAV ── */
+  nav{
+    padding:0 16px;
+    height:58px;
+    gap:0;
+    justify-content:space-between;
+  }
+  .nav-brand img{height:40px}
+  .nav-center{display:none}
+  .nav-cta{display:none!important}
+  .nav-right{display:flex;gap:4px}
+  .nav-login{display:none!important}
+  /* Mobile CTA: far end */
+  .nav-cta-mobile{
+    display:flex!important;
+    order:999;
+    padding:9px 16px;
+    font-size:13px;
+    gap:6px;
+    border-radius:10px;
+  }
+
+  /* ── HERO ── */
+  .hero{
+    grid-template-columns:1fr;
+    min-height:0;
+    padding:80px 20px 44px;
+    text-align:center;
+    gap:0;
+  }
+  .hero-mock{display:none}
+  .hero h1{
+    font-size:34px;
+    line-height:1.3;
+    letter-spacing:-.02em;
+    margin-bottom:16px;
+    margin-top:0;
+  }
+  .hero-sub{
+    font-size:14px;
+    line-height:1.75;
+    margin-bottom:28px;
+    color:var(--fog);
+  }
+  /* Hero buttons — stack nicely */
+  .hero-btns{
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+    margin-bottom:36px;
+    max-width:380px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .btn-primary,.btn-secondary,.btn-gold{
+    width:100%;
+    justify-content:center;
+    padding:14px 20px;
+    font-size:15px;
+    border-radius:12px;
+  }
+  .download-row{display:none!important}
+  /* Hero stats — 2×2 grid */
+  .hero-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    max-width:380px;
+    margin:0 auto;
+  }
+  .hero-stat{
+    background:var(--glass);
+    padding:16px 12px;
+    text-align:center;
+  }
+  .hero-stat-sep{display:none}
+  .hero-stat-num{font-size:26px;margin-bottom:5px}
+  .hero-stat-lbl{font-size:11px;line-height:1.3}
+
+  /* ── STATS BAND ── */
+  .stats-band-inner{
+    flex-direction:column;
+    gap:0;
+  }
+  .stats-band-inner > div{
+    border-right:none!important;
+    border-bottom:1px solid var(--line);
+    flex:none!important;
+    padding:14px 20px!important;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    text-align:right;
+  }
+  body.en .stats-band-inner > div{text-align:left}
+  .stats-band-inner > div:last-child{border-bottom:none}
+  .stats-band-inner > div > div:first-child{
+    font-size:28px!important;
+    min-width:70px;
+    text-align:center;
+  }
+  .stats-band-inner > div > div:last-child{font-size:13px!important}
+
+  /* ── SECTIONS ── */
+  .sec{padding:48px 18px}
+  .sec-tag{font-size:9px;margin-bottom:10px}
+  .h2{font-size:30px;margin-bottom:12px;line-height:1.35;letter-spacing:0}
+  body:not(.en) .h2{font-family:var(--ar);line-height:1.45;letter-spacing:0}
+  .lead{font-size:13.5px;margin-bottom:32px}
+
+  /* ── PROBLEM ── */
+  .prob-grid{grid-template-columns:1fr;gap:10px}
+  .prob-card{padding:20px 18px;border-radius:12px}
+  .prob-card h3{font-size:14px}
+  .prob-card p{font-size:12.5px}
+  .prob-icon{width:38px;height:38px;font-size:17px;margin-bottom:12px}
+
+  /* ── HOW IT WORKS — Clean numbered cards ── */
+  .how-grid{
+    grid-template-columns:1fr;
+    gap:10px;
+    position:relative;
+  }
+  .how-grid::before,.how-grid::after{display:none}
+  .how-step{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    text-align:right;
+    padding:18px 16px;
+    background:var(--glass);
+    border:1px solid var(--line);
+    border-radius:14px;
+    position:relative;
+    flex-direction:row; /* number on right in RTL */
+  }
+  body.en .how-step{flex-direction:row-reverse;text-align:left}
+  .how-step:nth-child(1){border-color:rgba(26,58,255,.25)}
+  .how-step:nth-child(2){border-color:rgba(245,166,35,.25)}
+  .how-step:nth-child(3){border-color:rgba(0,212,255,.25)}
+  .how-step:nth-child(4){border-color:rgba(0,230,118,.25)}
+  .how-num{
+    width:44px;height:44px;
+    font-size:17px;
+    flex-shrink:0;
+    margin-bottom:0;
+    background:var(--ink2);
+    border-radius:50%;
+  }
+  .how-step-text{flex:1}
+  .how-step h3{font-size:14px;margin-bottom:5px}
+  .how-step p{font-size:12.5px;line-height:1.65}
+
+  /* ── FEATURES ── */
+  .feat-grid{grid-template-columns:1fr;gap:10px}
+  /* Horizontal layout on mobile: icon left, text right */
+  .feat-card{
+    padding:16px 14px;
+    border-radius:12px;
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .feat-icon{
+    width:40px;height:40px;
+    font-size:18px;
+    margin-bottom:0;
+    flex-shrink:0;
+    border-radius:10px;
+  }
+  .feat-content{flex:1;min-width:0;overflow:hidden}
+  .feat-card h3{font-size:13.5px;margin-bottom:5px;line-height:1.4}
+  .feat-card p{font-size:12px;margin-bottom:8px;line-height:1.7}
+  .feat-tag{font-size:9px;display:inline-block;max-width:100%}
+
+  /* ── MATCH ENGINE ── */
+  .match-layout{grid-template-columns:1fr;gap:32px}
+  .check-item{font-size:13px}
+  .match-window{border-radius:12px}
+
+  /* ── SPEED ── */
+  .speed-grid{grid-template-columns:1fr;gap:12px}
+  .vs-circle{display:none}
+  .speed-box{padding:28px 20px;border-radius:14px}
+  .speed-big{font-size:52px}
+  .speed-desc{font-size:13px}
+
+  /* ── PRICING ── */
+  .price-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  /* Featured plan first on mobile */
+  .price-card.featured{order:-1}
+  .price-card{padding:24px 20px;border-radius:16px}
+  .price-num{font-size:40px}
+  .pf{font-size:12.5px}
+
+  /* ── TESTIMONIALS → Horizontal swipe carousel ── */
+  .testi-grid{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    gap:12px;
+    padding-bottom:12px;
+    margin:0 -18px;
+    padding-left:18px;
+    padding-right:18px;
+    scrollbar-width:none;
+  }
+  .testi-grid::-webkit-scrollbar{display:none}
+  .testi-card{
+    flex:0 0 82vw;
+    scroll-snap-align:start;
+    padding:22px 18px;
+    border-radius:14px;
+  }
+  .testi-quote{font-size:13.5px;line-height:1.75}
+
+  /* ── PRICING → Horizontal swipe carousel ── */
+  .price-grid{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    gap:12px;
+    margin:16px -18px 0;
+    padding-left:18px;
+    padding-right:18px;
+    padding-bottom:12px;
+    scrollbar-width:none;
+  }
+  .price-grid::-webkit-scrollbar{display:none}
+  .price-card{
+    flex:0 0 82vw;
+    scroll-snap-align:center;
+    padding:24px 20px;
+    border-radius:16px;
+  }
+  .price-card.featured{order:-1;flex:0 0 86vw}
+  .price-num{font-size:40px}
+
+  /* ── FAQ ── */
+  .faq-grid{grid-template-columns:1fr;gap:8px}
+  .faq-q{font-size:13.5px}
+  .faq-ans{font-size:12.5px}
+
+  /* ── CTA SECTION ── */
+  .cta-sec{padding:60px 20px}
+  .cta-h2{font-size:30px;line-height:1.35;letter-spacing:0}
+  body:not(.en) .cta-h2{font-family:var(--ar);line-height:1.45;letter-spacing:0}
+  .cta-p{font-size:14px;margin-bottom:24px}
+  .cta-btns{
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+    max-width:400px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:28px;
+  }
+  .cta-btns .btn-gold,.cta-btns .btn-primary{
+    width:100%;justify-content:center;
+    padding:15px 20px;font-size:15px;
+  }
+  /* Hide contact info row on mobile — just keep buttons */
+  .contact-row{display:none!important}
+  .final-stats{display:none!important}
+
+  /* ── FOOTER ── */
+  footer{
+    flex-direction:column;
+    text-align:center;
+    padding:28px 20px;
+    align-items:center;
+    gap:16px;
+  }
+  .footer-links{display:none}
+  .footer-contact{justify-content:center;flex-wrap:wrap;gap:12px}
+}
+
+/* Tablet adjustments (769–1024) */
+@media(min-width:769px) and (max-width:1024px){
+  nav{padding:0 28px}
+  .nav-center{display:none}
+  .nav-cta{display:none!important}
+  .nav-cta-mobile{display:flex!important;order:999;margin-inline-start:auto;padding:8px 16px}
+  .nav-right{display:flex}
+  .nav-login{padding:7px 12px;font-size:12px}
+  .lang-toggle{padding:2px;gap:1px}
+  .lang-btn{padding:4px 10px;font-size:10px}
+  .hero{grid-template-columns:1fr;padding:100px 40px 60px;text-align:center}
+  .hero-mock{display:none}
+  .hero-btns{justify-content:center}
+  .hero-stats{justify-content:center}
+  .sec{padding:70px 40px}
+  .prob-grid,.feat-grid,.price-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  .how-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .how-grid::before{display:none}
+  .match-layout,.speed-grid{grid-template-columns:1fr}
+  .vs-circle{display:none}
+  .faq-grid{grid-template-columns:1fr}
+  .final-stats{grid-template-columns:repeat(3,1fr)}
+  .cta-sec{padding:80px 40px}
+  footer{flex-direction:column;text-align:center;padding:28px 40px;align-items:center}
+  .footer-links{display:none}
+}
+</style>
+</head>
+<body>
+<div class="hero-bg"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-brand">
+    <img src="/logo.png" alt="مكان">
+  </a>
+  <!-- Mobile CTA right next to logo (right side in RTL) -->
+  <a href="https://wa.me/971568679099" target="_blank" class="nav-cta-mobile">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 0z"/></svg>
+    <span class="ar">احجز عرض</span><span class="en-only">Book Demo</span>
+  </a>
+  <div class="nav-center">
+    <a href="#features" class="nav-link ar">المميزات</a><a href="#features" class="nav-link en-only">Features</a>
+    <a href="#match" class="nav-link ar">محرك المطابقة</a><a href="#match" class="nav-link en-only">Match Engine</a>
+    <a href="#pricing" class="nav-link ar">الأسعار</a><a href="#pricing" class="nav-link en-only">Pricing</a>
+    <a href="#faq" class="nav-link ar">الأسئلة</a><a href="#faq" class="nav-link en-only">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnAr" onclick="setLang('ar')">عربي</button>
+      <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="/app" class="nav-login">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+      <span class="ar">دخول</span><span class="en-only">Login</span>
+    </a>
+    <a href="https://wa.me/971568679099" target="_blank" class="nav-cta">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413A11.815 11.815 0 0012.05 0z"/></svg>
+      <span class="ar">احجز عرضاً</span><span class="en-only">Book Demo</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="background:var(--ink);position:relative;z-index:2;border-bottom:1px solid var(--line)">
+<div class="hero">
+  <div>
+    <h1 class="rev d1" style="margin-top:8px">
+      <span class="ar">أغلق صفقاتك أسرع<br>بنظامك <span class="grad-blue">الخاص</span></span>
+      <span class="en-only">Close Deals Faster<br>With Your <span class="grad-blue">Own System</span></span>
+    </h1>
+    <p class="hero-sub rev d2">
+      <span class="ar">وكالتك بتخسر صفقات مش بسبب الفريق — بسبب الأدوات. مَكَان بيوحّد كل حاجة في نظام واحد، مبني من الأساس للعقارات.</span>
+      <span class="en-only">Your agency loses deals not because of your team — but because of your tools. MAKAN unifies everything in one system built from the ground up for real estate.</span>
+    </p>
+    <div class="hero-btns rev d2">
+      <a href="https://wa.me/971568679099" target="_blank" class="btn-gold">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 0z"/></svg>
+        <span class="ar">احجز عرض مجاني</span><span class="en-only">Book Free Demo</span>
+      </a>
+      <a href="/app" class="btn-secondary">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        <span class="ar">دخول النظام</span><span class="en-only">Login to System</span>
+      </a>
+    </div>
+    <div class="download-row" style="border-top:1px solid rgba(255,255,255,0.07);padding-top:16px;margin-top:8px">
+      <span class="download-label">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="opacity:.5"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span class="ar">تحميل لـ Mac</span><span class="en-only">Download for Mac</span>
+      </span>
+      <a href="https://github.com/realkhaledd/makan-releases/releases/download/v1.0.0/MAKAN-Property-OS-1.0.0-arm64.dmg" class="download-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Apple Silicon
+        <span class="chip-label">M1 · M2 · M3 · M4</span>
+      </a>
+      <a href="https://github.com/realkhaledd/makan-releases/releases/download/v1.0.0/MAKAN-Property-OS-1.0.0.dmg" class="download-btn download-btn-ghost">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Intel
+        <span class="chip-label">Mac قديم</span>
+      </a>
+    </div>
+    <div class="hero-stats rev d3">
+      <div class="hero-stat">
+        <div class="hero-stat-num blue">96%</div>
+        <div class="hero-stat-lbl"><span class="ar">دقة المطابقة</span><span class="en-only">Match Accuracy</span></div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num gold">&lt;1s</div>
+        <div class="hero-stat-lbl"><span class="ar">وصول الـ Lead</span><span class="en-only">Lead Arrival</span></div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num green">3x</div>
+        <div class="hero-stat-lbl"><span class="ar">إنتاجية المبيعات</span><span class="en-only">Sales Productivity</span></div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" style="color:var(--teal)">$0</div>
+        <div class="hero-stat-lbl"><span class="ar">رسوم إعداد</span><span class="en-only">Setup Fee</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero mockup -->
+  <div class="hero-mock rev d1">
+    <div class="mock-window">
+      <div class="mock-bar">
+        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+        <span class="mock-title">MAKAN Property OS — Dashboard</span>
+      </div>
+      <div class="mock-body">
+        <div class="dash-kpis">
+          <div class="dash-kpi"><div class="dash-kpi-num" style="color:var(--gold)">AED 14.1M</div><div class="dash-kpi-lbl"><span class="ar">إجمالي القيمة</span><span class="en-only">Total Value</span></div></div>
+          <div class="dash-kpi"><div class="dash-kpi-num" style="color:var(--green)">6</div><div class="dash-kpi-lbl"><span class="ar">الوحدات</span><span class="en-only">Units</span></div></div>
+          <div class="dash-kpi"><div class="dash-kpi-num" style="color:var(--teal)">12</div><div class="dash-kpi-lbl"><span class="ar">ليد نشط</span><span class="en-only">Active Leads</span></div></div>
+        </div>
+        <div style="font-size:10px;color:var(--slate);font-family:var(--en);margin-bottom:8px;letter-spacing:.04em">RECENT LEADS — MATCHED</div>
+        <div class="dash-leads">
+          <div class="dash-lead">
+            <div class="dash-lead-dot" style="background:var(--green)"></div>
+            <div class="dash-lead-info"><div class="dash-lead-name">Ahmed Al Rashidi</div><div class="dash-lead-meta">3BR · Marina · AED 2.2M</div></div>
+            <div class="dash-lead-pct" style="color:var(--green)">97%</div>
+          </div>
+          <div class="dash-lead">
+            <div class="dash-lead-dot" style="background:var(--gold)"></div>
+            <div class="dash-lead-info"><div class="dash-lead-name">Sara Al Mansouri</div><div class="dash-lead-meta">2BR · JVC · AED 1.1M</div></div>
+            <div class="dash-lead-pct" style="color:var(--gold)">84%</div>
+          </div>
+          <div class="dash-lead">
+            <div class="dash-lead-dot" style="background:#7aa0ff"></div>
+            <div class="dash-lead-info"><div class="dash-lead-name">Khalid Al Nuaimi</div><div class="dash-lead-meta">Studio · Downtown · AED 680K</div></div>
+            <div class="dash-lead-pct" style="color:#7aa0ff">71%</div>
+          </div>
+          <div class="dash-lead">
+            <div class="dash-lead-dot" style="background:var(--teal)"></div>
+            <div class="dash-lead-info"><div class="dash-lead-name">Noura Al Zahrani</div><div class="dash-lead-meta">4BR · Saadiyat · AED 5.5M</div></div>
+            <div class="dash-lead-pct" style="color:var(--teal)">66%</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:12px;font-size:10px;color:var(--slate);font-family:var(--en);border-top:1px solid var(--line);padding-top:10px">
+          <span>Sync: <span style="color:var(--green)">●</span> Live</span>
+          <span>Automation: <span style="color:var(--teal)">Running</span></span>
+          <span>6 units · 3 agents</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- STATS BAND -->
+<div style="background:rgba(9,14,28,.8);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 48px;display:flex;align-items:center;justify-content:center;gap:0;position:relative;z-index:2">
+  <div class="stats-band-inner" style="display:flex;align-items:stretch;flex-wrap:wrap;justify-content:center;gap:0;width:100%;max-width:900px">
+    <div style="flex:1;min-width:150px;text-align:center;padding:10px 24px;border-right:1px solid var(--line)">
+      <div style="font-family:var(--en);font-size:26px;font-weight:800;color:var(--gold);line-height:1;margin-bottom:5px">96%</div>
+      <div style="font-size:12px;color:var(--fog)"><span class="ar">دقة محرك المطابقة</span><span class="en-only">Match Engine Accuracy</span></div>
+    </div>
+    <div style="flex:1;min-width:150px;text-align:center;padding:10px 24px;border-right:1px solid var(--line)">
+      <div style="font-family:var(--en);font-size:26px;font-weight:800;color:var(--green);line-height:1;margin-bottom:5px">&lt;1s</div>
+      <div style="font-size:12px;color:var(--fog)"><span class="ar">سرعة وصول الـ Lead</span><span class="en-only">Lead Arrival Speed</span></div>
+    </div>
+    <div style="flex:1;min-width:150px;text-align:center;padding:10px 24px;border-right:1px solid var(--line)">
+      <div style="font-family:var(--en);font-size:26px;font-weight:800;color:var(--teal);line-height:1;margin-bottom:5px">3x</div>
+      <div style="font-size:12px;color:var(--fog)"><span class="ar">إنتاجية فريق المبيعات</span><span class="en-only">Sales Team Productivity</span></div>
+    </div>
+    <div style="flex:1;min-width:150px;text-align:center;padding:10px 24px;border-right:1px solid var(--line)">
+      <div style="font-family:var(--en);font-size:26px;font-weight:800;color:#7aa0ff;line-height:1;margin-bottom:5px">5</div>
+      <div style="font-size:12px;color:var(--fog)"><span class="ar">وحدات رئيسية متكاملة</span><span class="en-only">Core Modules Integrated</span></div>
+    </div>
+    <div style="flex:1;min-width:150px;text-align:center;padding:10px 24px">
+      <div style="font-family:var(--en);font-size:26px;font-weight:800;color:var(--gold2);line-height:1;margin-bottom:5px">14</div>
+      <div style="font-size:12px;color:var(--fog)"><span class="ar">يوم تجربة مجانية</span><span class="en-only">Day Free Trial</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="prob-sec" id="problem">
+  <div class="sec">
+    <div class="sec-tag rev"><span class="ar">المشكلة</span><span class="en-only">The Problem</span></div>
+    <h2 class="h2 rev"><span class="ar">الوكالات بتنزف فلوس<br><span class="grad-gold">على أدوات مش بتاعتها</span></span><span class="en-only">Agencies Are Bleeding Money<br><span class="grad-gold">On Tools They Don't Own</span></span></h2>
+    <p class="lead rev" style="margin-bottom:40px"><span class="ar">كل شهر فواتير تتراكم، بيانات العملاء في أيد غيرك، والـ leads بتوصل متأخرة وبتخسر بيعات حقيقية.</span><span class="en-only">Every month bills pile up, client data sits on foreign servers, and leads arrive late costing you real deals.</span></p>
+    <div class="prob-grid">
+      <div class="prob-card rev"><div class="prob-icon">💸</div><h3><span class="ar">اشتراكات متعددة بدون عائد</span><span class="en-only">Multiple Subscriptions, No ROI</span></h3><p><span class="ar">كل شهر فواتير تتراكم لأدوات منفصلة — إيميلات، أتمتة، CRM — من غير ما تحس بعائد حقيقي على استثمارك.</span><span class="en-only">Monthly bills pile up for separate tools — email, automation, CRM — with no tangible return on your investment.</span></p></div>
+      <div class="prob-card rev d1"><div class="prob-icon">🔗</div><h3><span class="ar">أدوات متفرقة مش متكاملة</span><span class="en-only">Disconnected Fragmented Tools</span></h3><p><span class="ar">كل أداة تانية بتضيفها بتعمل ثغرة جديدة ونقطة فشل محتملة تعطل الشغل وتهدر وقت الفريق.</span><span class="en-only">Every new tool you add creates a new failure point that disrupts operations and wastes your team's time.</span></p></div>
+      <div class="prob-card rev d2"><div class="prob-icon">☁️</div><h3><span class="ar">بيانات عملاءك عند غيرك</span><span class="en-only">Your Client Data at Risk</span></h3><p><span class="ar">أهم أصل في وكالتك — قاعدة العملاء — محفوظة على سيرفرات خارجية مش بتاعتك ومش بتتحكم فيها.</span><span class="en-only">Your most valuable asset — the client database — lives on external servers you don't control or own.</span></p></div>
+      <div class="prob-card rev d3"><div class="prob-icon">⏱️</div><h3><span class="ar">تأخير بيكلّفك بيعات</span><span class="en-only">Delays That Cost You Deals</span></h3><p><span class="ar">التأخير في وصول الـ leads بيعني المنافس بيتواصل مع العميل قبلك — وفي العقارات، اللي بيوصل الأول بيكسب.</span><span class="en-only">Lead arrival delays mean your competitor contacts the client before you — in real estate, first contact wins the deal.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:var(--ink);border-top:1px solid var(--line);position:relative;z-index:2">
+  <div class="sec sec-center">
+    <div class="sec-tag rev"><span class="ar">كيف يشتغل</span><span class="en-only">How It Works</span></div>
+    <h2 class="h2 rev"><span class="ar">من التسجيل للإنتاج<br><span class="grad-blue">في يوم واحد</span></span><span class="en-only">From Sign-Up to Production<br><span class="grad-blue">In One Day</span></span></h2>
+    <div class="how-grid" style="margin-top:56px">
+      <div class="how-step rev"><div class="how-num">1</div><h3><span class="ar">تسجّل وتجهّز</span><span class="en-only">Sign Up & Setup</span></h3><p><span class="ar">حساب جديد في 5 دقائق. ننقل بياناتك القديمة بالكامل بدون خسارة ولا تعقيد.</span><span class="en-only">New account in 5 minutes. We migrate all your old data without loss or complexity.</span></p></div>
+      <div class="how-step rev d1"><div class="how-num">2</div><h3><span class="ar">تربط إعلاناتك</span><span class="en-only">Connect Your Ads</span></h3><p><span class="ar">ربط Meta API مباشر — الـ leads بتدخل لحظياً في أقل من ثانية. بدون وسيط وبدون تأخير.</span><span class="en-only">Direct Meta API connection — leads flow instantly in under 1 second. No middleman, no delay.</span></p></div>
+      <div class="how-step rev d2"><div class="how-num">3</div><h3><span class="ar">تشغّل الأتمتة</span><span class="en-only">Run Automation</span></h3><p><span class="ar">النظام يوزّع المهام ويتابع الليدات ويبعت الإيميلات تلقائياً 24/7 بدون تدخلك.</span><span class="en-only">System distributes tasks, follows leads, and sends emails automatically 24/7 without you.</span></p></div>
+      <div class="how-step rev d3"><div class="how-num">4</div><h3><span class="ar">تغلق صفقات أكتر</span><span class="en-only">Close More Deals</span></h3><p><span class="ar">فريقك يتفرغ للبيع — والأتمتة تكمل الباقي. 3x إنتاجية مع نفس عدد الأشخاص.</span><span class="en-only">Your team focuses on selling — automation handles the rest. 3x productivity, same team size.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="feat-sec" id="features" style="border-top:1px solid var(--line)">
+  <div class="sec">
+    <div class="sec-tag rev"><span class="ar">المميزات</span><span class="en-only">Features</span></div>
+    <h2 class="h2 rev"><span class="ar">كل اللي محتاجه<br><span class="grad-blue">في مكان واحد</span></span><span class="en-only">Everything You Need<br><span class="grad-blue">In One Place</span></span></h2>
+    <p class="lead rev" style="margin-bottom:44px"><span class="ar">بُني من الصفر لوكالات العقارات — بدون قيود، بدون اشتراكات إضافية.</span><span class="en-only">Built from scratch for real estate agencies — no limits, no extra subscriptions.</span></p>
+    <div class="feat-grid">
+      <div class="feat-card c-blue rev"><div class="feat-icon">📡</div><div class="feat-content"><h3><span class="ar">ربط مباشر مع Meta API</span><span class="en-only">Direct Meta API Sync</span></h3><p><span class="ar">الـ leads بتدخل من إعلانك لحظياً عبر Facebook Graph API بدون أي وسيط. أقل من ثانية من الضغطة للـ CRM.</span><span class="en-only">Leads flow from your ad instantly via Facebook Graph API with no middleman. Under 1 second from click to CRM.</span></p><span class="feat-tag">Real-time · Direct</span></div></div>
+      <div class="feat-card c-gold rev d1"><div class="feat-icon">📧</div><div class="feat-content"><h3><span class="ar">محرك إيميلات لا نهائي</span><span class="en-only">Unlimited Email Engine</span></h3><p><span class="ar">SMTP مدمج — ملايين إيميلات مخصصة بـ {الاسم}، حماية كاملة للدومين، anti-spam throttle. بدون حدود.</span><span class="en-only">Built-in SMTP — unlimited personalized emails with {Name}, full domain protection, anti-spam throttle. No limits.</span></p><span class="feat-tag">Unlimited · Built-in</span></div></div>
+      <div class="feat-card c-teal rev d2"><div class="feat-icon">📋</div><div class="feat-content"><h3><span class="ar">Kanban CRM احترافي</span><span class="en-only">Professional Kanban CRM</span></h3><p><span class="ar">إدارة الليدات عبر لوحات Kanban متقدمة مع تتبع كامل لرحلة العميل من أول تواصل لإغلاق البيعة.</span><span class="en-only">Manage leads via advanced Kanban boards with full client journey tracking from first touch to deal close.</span></p><span class="feat-tag">Full CRM · Kanban</span></div></div>
+      <div class="feat-card c-green rev"><div class="feat-icon">⚙️</div><div class="feat-content"><h3><span class="ar">أتمتة تعمل 24/7</span><span class="en-only">24/7 Background Automation</span></h3><p><span class="ar">نظام أتمتة يشتغل في الخلفية كل 5 دقائق — توزيع مهام، تغيير حالات، تذكيرات. بدون تدخل بشري.</span><span class="en-only">Automation runs every 5 minutes — task distribution, status changes, reminders. Zero human touch.</span></p><span class="feat-tag">Always-On</span></div></div>
+      <div class="feat-card c-blue rev d1"><div class="feat-icon">📑</div><div class="feat-content"><h3><span class="ar">عروض PDF احترافية</span><span class="en-only">Professional PDF Proposals</span></h3><p><span class="ar">إنشاء عروض عقارية PDF في ثوان مباشرة من قوائم الـ Shortlists — تفاصيل كاملة وجاهزة للإرسال.</span><span class="en-only">Generate PDF proposals in seconds from shortlists — full details, ready to send to clients.</span></p><span class="feat-tag">Auto-Generated</span></div></div>
+      <div class="feat-card c-purple rev d2"><div class="feat-icon">🎓</div><div class="feat-content"><h3><span class="ar">أكاديمية تطوير الفريق</span><span class="en-only">Team Development Academy</span></h3><p><span class="ar">أكاديمية تدريبية مدمجة — دورات متخصصة لتطوير مهارات فريقك وزيادة نسب إغلاق الصفقات.</span><span class="en-only">Built-in training academy — specialized courses to develop skills and increase deal closing rates.</span></p><span class="feat-tag">Built-in Academy</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MATCH ENGINE -->
+<section style="background:var(--ink2);border-top:1px solid var(--line);position:relative;z-index:2" id="match">
+  <div class="sec">
+    <div class="match-layout">
+      <div>
+        <div class="sec-tag rev"><span class="ar">محرك المطابقة</span><span class="en-only">Match Engine</span></div>
+        <h2 class="h2 rev"><span class="ar">الوحدة الصح<br><span class="grad-green">للعميل الصح فوراً</span></span><span class="en-only">The Right Unit<br><span class="grad-green">To The Right Client Instantly</span></span></h2>
+        <p class="lead rev" style="margin-bottom:24px"><span class="ar">محرك مطابقة حصري يحلل كل طلب شراء وكل وحدة في المخزون، ويعطيك نسبة تطابق مئوية دقيقة في ثوان.</span><span class="en-only">Proprietary match engine analyzes every buyer request against every unit, giving precise match percentages in seconds.</span></p>
+        <div class="check-list rev d1">
+          <div class="check-item"><span class="check-ico">✓</span><span class="ar">يحلل أكتر من 12 معيار مطابقة في نفس الوقت (الموقع، السعر، المساحة، الطابق، الإطلالة)</span><span class="en-only">Analyzes 12+ match criteria simultaneously — location, price, size, floor, view and more</span></div>
+          <div class="check-item"><span class="check-ico">✓</span><span class="ar">نسبة تطابق مئوية دقيقة من 0% لـ 100% لكل وحدة في المخزون</span><span class="en-only">Precise match percentage from 0% to 100% for every unit in your inventory</span></div>
+          <div class="check-item"><span class="check-ico">✓</span><span class="ar">بيسرّع قرار إحالة الوحدة للعميل بـ 10x — السيلز يختار فوراً</span><span class="en-only">Speeds up unit referral decisions by 10x — sales agents choose instantly</span></div>
+          <div class="check-item"><span class="check-ico">✓</span><span class="ar">مخصص لسوق إعادة البيع وتنشيط السيولة العقارية في الخليج</span><span class="en-only">Built specifically for the resale market and property liquidity in the GCC</span></div>
+        </div>
+      </div>
+      <div class="match-window rev d2">
+        <div class="match-bar">
+          <div class="m-d"></div><div class="m-d"></div><div class="m-d"></div>
+          <span class="m-title">MAKAN — Match Engine v2</span>
+        </div>
+        <div class="match-body">
+          <div class="search-row">
+            <span style="font-size:13px">🔍</span>
+            <span class="search-text">3BR · Marina · Budget ≤ AED 2.2M · Floor 10+</span>
+            <button class="search-btn">Match</button>
+          </div>
+          <div class="match-hint"><span style="color:var(--teal)">247</span> units analyzed · <span style="color:var(--green)">4</span> top matches</div>
+          <div class="result-row"><span class="result-num">#1</span><div class="result-info"><div class="result-name">Marina Gate II — 3BR+M</div><div class="result-meta">Floor 14 · 1,820 sqft · AED 2.15M · Sea View</div></div><div class="result-pct">97%</div></div>
+          <div class="result-row"><span class="result-num">#2</span><div class="result-info"><div class="result-name">Damac Heights — 3BR</div><div class="result-meta">Floor 22 · 1,650 sqft · AED 2.1M · Marina</div></div><div class="result-pct">84%</div></div>
+          <div class="result-row"><span class="result-num">#3</span><div class="result-info"><div class="result-name">Princess Tower — 3BR</div><div class="result-meta">Floor 18 · 1,740 sqft · AED 1.95M · City</div></div><div class="result-pct">71%</div></div>
+          <div class="result-row"><span class="result-num">#4</span><div class="result-info"><div class="result-name">Cayan Tower — 3BR</div><div class="result-meta">Floor 11 · 1,580 sqft · AED 2.2M · Partial</div></div><div class="result-pct">63%</div></div>
+          <div class="match-foot"><span>Matched in <span>0.3s</span></span><span>MAKAN Engine v2</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEED -->
+<section style="background:var(--ink);border-top:1px solid var(--line);position:relative;z-index:2" id="speed">
+  <div class="sec">
+    <div class="sec-tag rev"><span class="ar">السرعة</span><span class="en-only">Speed</span></div>
+    <h2 class="h2 rev"><span class="ar">15 دقيقة تأخير <span style="background:linear-gradient(135deg,var(--red),#ff8080);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">قبل مَكَان</span><br>أقل من ثانية <span class="grad-green">بعد مَكَان</span></span><span class="en-only">15-min Delay <span style="background:linear-gradient(135deg,var(--red),#ff8080);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Before MAKAN</span><br>&lt;1 Second <span class="grad-green">After MAKAN</span></span></h2>
+    <div class="speed-grid">
+      <div class="speed-box before rev"><div class="speed-label"><span class="ar">قبل مَكَان</span><span class="en-only">Before MAKAN</span></div><div class="speed-big">15m</div><div class="speed-desc"><span class="ar">أدوات الأتمتة التقليدية بتأخر وصول الـ leads — وفي العقارات، التأخير يعني خسارة الصفقة.</span><span class="en-only">Traditional automation tools delay lead arrival — and in real estate, delays mean lost deals.</span></div></div>
+      <div class="vs-circle">VS</div>
+      <div class="speed-box after rev d1"><div class="speed-label"><span class="ar">مع مَكَان</span><span class="en-only">With MAKAN</span></div><div class="speed-big">&lt;1s</div><div class="speed-desc"><span class="ar">اتصال مباشر عبر Meta Graph API — الـ lead بيوصل فوراً للـ CRM وبيتوزع على السيلز المناسب في نفس اللحظة.</span><span class="en-only">Direct Meta Graph API connection — lead arrives instantly to CRM and is assigned to the right agent in the same moment.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="background:var(--ink2);border-top:1px solid var(--line);position:relative;z-index:2" id="pricing">
+  <div class="sec sec-center">
+    <div class="sec-tag rev"><span class="ar">الأسعار</span><span class="en-only">Pricing</span></div>
+    <h2 class="h2 rev"><span class="ar">شفافية كاملة<br><span class="grad-blue">بدون تكاليف مخفية</span></span><span class="en-only">Full Transparency<br><span class="grad-blue">No Hidden Costs</span></span></h2>
+    <p class="lead rev" style="margin:0 auto 0;max-width:520px"><span class="ar">اختار الباقة المناسبة لحجم وكالتك. الاشتراك السنوي يوفر شهرين مجاناً.</span><span class="en-only">Choose the plan that fits your agency. Annual subscription saves 2 months free.</span></p>
+    <div class="price-grid">
+      <div class="price-card rev">
+        <div class="price-tier">Starter</div>
+        <div class="price-name"><span class="ar">الأساسي</span><span class="en-only">Starter</span></div>
+        <div class="price-desc"><span class="ar">للوكالات الصغيرة حتى 5 أعضاء</span><span class="en-only">For small agencies up to 5 members</span></div>
+        <div class="price-row"><span class="price-curr">AED</span><span class="price-num">499</span></div>
+        <div class="price-period"><span class="ar">شهرياً</span><span class="en-only">per month</span></div>
+        <div class="price-annual"><span class="ar">أو AED 4,999 سنوياً — وفر شهرين</span><span class="en-only">or AED 4,999/year — save 2 months</span></div>
+        <div class="price-div"></div>
+        <ul class="price-feats">
+          <li class="pf on"><span class="ar">محرك المطابقة الذكي</span><span class="en-only">Smart Match Engine</span></li>
+          <li class="pf on"><span class="ar">CRM كامل + Kanban</span><span class="en-only">Full CRM + Kanban</span></li>
+          <li class="pf on"><span class="ar">ربط Meta API</span><span class="en-only">Meta API Integration</span></li>
+          <li class="pf on"><span class="ar">التقويم والمهام والشات</span><span class="en-only">Calendar, Tasks & Chat</span></li>
+          <li class="pf on"><span class="ar">محرك الإيميلات SMTP</span><span class="en-only">SMTP Email Engine</span></li>
+          <li class="pf off"><span class="ar">الأكاديمية التدريبية</span><span class="en-only">Training Academy</span></li>
+          <li class="pf off"><span class="ar">أتمتة متقدمة</span><span class="en-only">Advanced Automation</span></li>
+        </ul>
+        <a href="https://wa.me/971568679099" target="_blank" class="btn-secondary" style="width:100%;justify-content:center"><span class="ar">تواصل معنا</span><span class="en-only">Contact Us</span></a>
+        <div class="price-note">14-day free trial · No credit card</div>
+      </div>
+      <div class="price-card featured rev d1">
+        <div class="price-badge"><span class="ar">الأكثر طلباً</span><span class="en-only">Most Popular</span></div>
+        <div class="price-tier">Professional</div>
+        <div class="price-name"><span class="ar">الاحترافي</span><span class="en-only">Professional</span></div>
+        <div class="price-desc"><span class="ar">للوكالات المتوسطة حتى 20 عضو</span><span class="en-only">For mid-size agencies up to 20 members</span></div>
+        <div class="price-row"><span class="price-curr">AED</span><span class="price-num">999</span></div>
+        <div class="price-period"><span class="ar">شهرياً</span><span class="en-only">per month</span></div>
+        <div class="price-annual"><span class="ar">أو AED 9,999 سنوياً — وفر شهرين</span><span class="en-only">or AED 9,999/year — save 2 months</span></div>
+        <div class="price-div"></div>
+        <ul class="price-feats">
+          <li class="pf on"><span class="ar">كل مميزات Starter</span><span class="en-only">All Starter features</span></li>
+          <li class="pf on"><span class="ar">الأكاديمية التدريبية الكاملة</span><span class="en-only">Full Training Academy</span></li>
+          <li class="pf on"><span class="ar">أتمتة متقدمة (كل 5 دقائق)</span><span class="en-only">Advanced Automation (5 min)</span></li>
+          <li class="pf on"><span class="ar">هيكل تنظيمي + أدوار مفصلة</span><span class="en-only">Org Chart + Granular Roles</span></li>
+          <li class="pf on"><span class="ar">حتى 20 مستخدم</span><span class="en-only">Up to 20 users</span></li>
+          <li class="pf on"><span class="ar">دعم واتساب أولوية</span><span class="en-only">Priority WhatsApp Support</span></li>
+          <li class="pf on"><span class="ar">تدريب الفريق 4 ساعات</span><span class="en-only">4-hour Team Training</span></li>
+        </ul>
+        <a href="https://wa.me/971568679099" target="_blank" class="btn-primary" style="width:100%;justify-content:center"><span class="ar">احجز عرض تجريبي</span><span class="en-only">Book a Demo</span></a>
+        <div class="price-note">14-day free trial · No credit card</div>
+      </div>
+      <div class="price-card ent rev d2">
+        <div class="price-badge gold"><span class="ar">مخصص</span><span class="en-only">Custom</span></div>
+        <div class="price-tier">Enterprise</div>
+        <div class="price-name"><span class="ar">المؤسسي</span><span class="en-only">Enterprise</span></div>
+        <div class="price-desc"><span class="ar">للوكالات الكبيرة وشركات التطوير</span><span class="en-only">For large agencies and developers</span></div>
+        <div class="price-row" style="align-items:center"><span class="price-num"><span class="ar">تواصل معنا</span><span class="en-only">Let's Talk</span></span></div>
+        <div class="price-period"><span class="ar">سعر مخصص حسب الحجم</span><span class="en-only">Custom pricing by size</span></div>
+        <div class="price-annual" style="opacity:0">-</div>
+        <div class="price-div"></div>
+        <ul class="price-feats">
+          <li class="pf on"><span class="ar">كل مميزات Professional</span><span class="en-only">All Professional features</span></li>
+          <li class="pf on"><span class="ar">مستخدمين غير محدودين</span><span class="en-only">Unlimited users</span></li>
+          <li class="pf on"><span class="ar">تخصيص كامل حسب الطلب</span><span class="en-only">Full custom development</span></li>
+          <li class="pf on"><span class="ar">تكامل مع أنظمة خارجية</span><span class="en-only">External systems integration</span></li>
+          <li class="pf on"><span class="ar">SLA مضمون + دعم 24/7</span><span class="en-only">Guaranteed SLA + 24/7 Support</span></li>
+          <li class="pf on"><span class="ar">تدريب الفريق الكامل</span><span class="en-only">Full team training</span></li>
+          <li class="pf on"><span class="ar">عرض سعر خلال 24 ساعة</span><span class="en-only">Quote within 24 hours</span></li>
+        </ul>
+        <a href="https://wa.me/971568679099" target="_blank" class="btn-gold" style="width:100%;justify-content:center"><span class="ar">استشارة مجانية</span><span class="en-only">Free Consultation</span></a>
+        <div class="price-note"><span class="ar">رد خلال 24 ساعة</span><span class="en-only">Response within 24 hours</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--ink);border-top:1px solid var(--line);position:relative;z-index:2" id="testimonials">
+  <div class="sec">
+    <div class="sec-tag rev"><span class="ar">آراء العملاء</span><span class="en-only">Client Reviews</span></div>
+    <h2 class="h2 rev"><span class="ar">وكالات تثق في مَكَان</span><span class="en-only">Agencies That Trust MAKAN</span></h2>
+    <div class="testi-grid">
+      <div class="testi-card gold-testi rev"><div class="stars">★★★★★</div><div class="testi-quote"><span class="ar">"النظام وفّر علينا وقت وايد. الحين السيلز يوصل للعميل بثواني مع الوحدة الصح — وإغلاقاتنا ارتفعت بشكل ملحوظ."</span><span class="en-only">"The system saved us so much time. Sales agents now reach the right client in seconds — and our closures have noticeably improved."</span></div><div class="testi-author"><div class="testi-avatar" style="background:var(--blue-lo)">🏢</div><div><div class="testi-name"><span class="ar">أحمد الرشيدي</span><span class="en-only">Ahmed Al Rashidi</span></div><div class="testi-role">Agency Director · Dubai</div></div></div></div>
+      <div class="testi-card rev d1"><div class="stars">★★★★★</div><div class="testi-quote"><span class="ar">"الأكاديمية فرقت مع الفريق كتير وبسرعة ما توقعناها. السيلز الجدد بدأوا يغلقوا صفقات من الأسبوع الأول تقريباً."</span><span class="en-only">"The academy made a big difference — faster than we expected. New agents started closing deals from nearly the first week."</span></div><div class="testi-author"><div class="testi-avatar" style="background:var(--gold-lo)">📊</div><div><div class="testi-name"><span class="ar">رنا الخليل</span><span class="en-only">Rana Al Khalil</span></div><div class="testi-role">Sales Manager · Abu Dhabi</div></div></div></div>
+      <div class="testi-card rev d2"><div class="stars">★★★★★</div><div class="testi-quote"><span class="ar">"الأتمتة دي وفّرت علينا 3 ساعات بالظبط كل يوم. فريق المبيعات دلوقتي بقى متفرغ للبيع بالكامل ومش شايل هموم إدارية."</span><span class="en-only">"This automation saved us exactly 3 hours every day. The sales team is now fully focused on selling with zero admin overhead."</span></div><div class="testi-author"><div class="testi-avatar" style="background:var(--teal-lo)">⚡</div><div><div class="testi-name"><span class="ar">خالد النعيمي</span><span class="en-only">Khalid Al Nuaimi</span></div><div class="testi-role">Sales Director · Sharjah</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--ink2);border-top:1px solid var(--line);position:relative;z-index:2" id="faq">
+  <div class="sec">
+    <div class="sec-tag rev" style="justify-content:center;display:flex"><span class="ar">الأسئلة الشائعة</span><span class="en-only">FAQ</span></div>
+    <h2 class="h2 rev" style="text-align:center"><span class="ar">أسئلة في دماغك؟</span><span class="en-only">Questions on Your Mind?</span></h2>
+    <div class="faq-grid">
+      <div class="faq-item rev" onclick="toggleFAQ(this)"><div class="faq-row"><span class="faq-q"><span class="ar">هل مَكَان اشتراك شهري أو سنوي؟</span><span class="en-only">Is MAKAN monthly or annual?</span></span><div class="faq-ico">+</div></div><div class="faq-ans"><span class="ar">شهري أو سنوي حسب اختيارك. الاشتراك السنوي يوفر ما يعادل شهرين مجاناً مع تجميد السعر.</span><span class="en-only">Monthly or annual based on your preference. Annual subscription saves 2 months with price lock.</span></div></div>
+      <div class="faq-item rev d1" onclick="toggleFAQ(this)"><div class="faq-row"><span class="faq-q"><span class="ar">قد إيه وقت التنصيب والتدريب؟</span><span class="en-only">How long does setup & training take?</span></span><div class="faq-ico">+</div></div><div class="faq-ans"><span class="ar">الإعداد في يوم واحد. التدريب 4-8 ساعات حسب الباقة، وبتلاقي فريقك جاهز في نفس اليوم.</span><span class="en-only">Setup in one day. Training 4-8 hours by plan, your team is ready the same day.</span></div></div>
+      <div class="faq-item rev d2" onclick="toggleFAQ(this)"><div class="faq-row"><span class="faq-q"><span class="ar">ممكن ننقل بياناتنا من CRM تاني؟</span><span class="en-only">Can we migrate from another CRM?</span></span><div class="faq-ico">+</div></div><div class="faq-ans"><span class="ar">أيوه — نقل البيانات مدرج في كل الباقات. نعمل migration كاملة من Excel أو Bitrix24 بدون فقدان بيانات.</span><span class="en-only">Yes — data migration included in all plans. Complete migration from Excel or Bitrix24 without data loss.</span></div></div>
+      <div class="faq-item rev d3" onclick="toggleFAQ(this)"><div class="faq-row"><span class="faq-q"><span class="ar">هل فيه تجربة مجانية؟</span><span class="en-only">Is there a free trial?</span></span><div class="faq-ico">+</div></div><div class="faq-ans"><span class="ar">أيوه — 14 يوم مجاناً بدون بطاقة ائتمان. تجرب النظام بالكامل على بيانات وكالتك الحقيقية.</span><span class="en-only">Yes — 14 days free, no credit card. Test the full system with your real agency data.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-sec" id="cta">
+  <div class="cta-inner">
+    <div class="sec-tag rev" style="justify-content:center;display:flex"><span class="ar">ابدأ اليوم</span><span class="en-only">Start Today</span></div>
+    <h2 class="cta-h2 rev"><span class="ar">جاهز تشتغل<br>بنظامك <span class="grad-blue">الخاص؟</span></span><span class="en-only">Ready to Operate<br>With Your <span class="grad-blue">Own System?</span></span></h2>
+    <p class="cta-p rev"><span class="ar">احجز عرضاً تجريبياً مجانياً وشوف مَكَان بيشتغل على بيانات وكالتك الحقيقية. 14 يوم مجاناً بدون بطاقة ائتمان.</span><span class="en-only">Book a free demo and see MAKAN working with your real agency data. 14 days free, no credit card required.</span></p>
+    <div class="cta-btns rev d1">
+      <a href="https://wa.me/971568679099" target="_blank" class="btn-gold">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 0z"/></svg>
+        <span class="ar">احجز عرض مجاني — واتساب</span><span class="en-only">Book Free Demo — WhatsApp</span>
+      </a>
+      <a href="/app" class="btn-primary">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        <span class="ar">دخول النظام</span><span class="en-only">Login to System</span>
+      </a>
+    </div>
+    <div class="download-row" style="justify-content:center;margin-top:20px">
+      <span class="download-label"><span class="ar">📥 تحميل التطبيق لـ Mac</span><span class="en-only">📥 Download for Mac</span></span>
+      <a href="https://github.com/realkhaledd/makan-releases/releases/download/v1.0.0/MAKAN-Property-OS-1.0.0-arm64.dmg" class="download-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span class="ar">Apple Silicon</span><span class="en-only">Apple Silicon</span>
+        <span class="chip-label">M1 · M2 · M3 · M4</span>
+      </a>
+      <a href="https://github.com/realkhaledd/makan-releases/releases/download/v1.0.0/MAKAN-Property-OS-1.0.0.dmg" class="download-btn download-btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span>Intel</span>
+        <span class="chip-label">Mac قديم</span>
+      </a>
+    </div>
+    <div class="contact-row rev d2">
+      <a href="https://wa.me/971568679099" target="_blank" class="contact-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 0z"/></svg>
+        <span dir="ltr">‎+971 56 867 9099</span>
+      </a>
+      <span style="color:var(--slate)">·</span>
+      <a href="mailto:info@makancore.com" class="contact-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@makancore.com
+      </a>
+      <span style="color:var(--slate)">·</span>
+      <span class="contact-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="ar">رد خلال 24 ساعة</span><span class="en-only">Response within 24 hours</span>
+      </span>
+    </div>
+    <div class="final-stats rev d3">
+      <div class="final-stat"><span class="final-num">5</span><div class="final-lbl"><span class="ar">وحدات رئيسية متكاملة</span><span class="en-only">Core Modules</span></div></div>
+      <div class="final-stat"><span class="final-num">$0</span><div class="final-lbl"><span class="ar">رسوم إعداد</span><span class="en-only">Setup Fee</span></div></div>
+      <div class="final-stat"><span class="final-num">&lt;1s</span><div class="final-lbl"><span class="ar">وصول الـ Lead</span><span class="en-only">Lead Arrival</span></div></div>
+      <div class="final-stat"><span class="final-num">96%</span><div class="final-lbl"><span class="ar">دقة المطابقة</span><span class="en-only">Match Accuracy</span></div></div>
+      <div class="final-stat"><span class="final-num">14</span><div class="final-lbl"><span class="ar">يوم تجربة مجانية</span><span class="en-only">Day Free Trial</span></div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <img src="/logo.png" alt="مكان" style="height:38px;width:auto;filter:brightness(0) invert(1)">
+  </div>
+  <div class="footer-links">
+    <a href="#features" class="footer-link ar">المميزات</a>
+    <a href="#match" class="footer-link ar">المطابقة</a>
+    <a href="#pricing" class="footer-link ar">الأسعار</a>
+    <a href="#faq" class="footer-link ar">الأسئلة</a>
+    <a href="/app" class="footer-link ar">دخول النظام</a>
+    <a href="#features" class="footer-link en-only">Features</a>
+    <a href="#match" class="footer-link en-only">Match Engine</a>
+    <a href="#pricing" class="footer-link en-only">Pricing</a>
+    <a href="#faq" class="footer-link en-only">FAQ</a>
+    <a href="/app" class="footer-link en-only">Login</a>
+  </div>
+  <div class="footer-contact">
+    <a href="https://wa.me/971568679099" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.815 11.815 0 0012.05 0z"/></svg>
+      <span dir="ltr">‎+971 56 867 9099</span>
+    </a>
+    <a href="mailto:info@makancore.com">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      info@makancore.com
+    </a>
+  </div>
+  <div class="footer-copy">© 2026 مَكَان · All rights reserved</div>
+</footer>
+
+<script>
+// Language
+function setLang(l){
+  const b=document.body,ar=document.getElementById('btnAr'),en=document.getElementById('btnEn');
+  if(l==='en'){b.classList.add('en');b.setAttribute('dir','ltr');b.setAttribute('lang','en');en.classList.add('active');ar.classList.remove('active')}
+  else{b.classList.remove('en');b.setAttribute('dir','rtl');b.setAttribute('lang','ar');ar.classList.add('active');en.classList.remove('active')}
+}
+// Nav scroll
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
+// Reveal
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')}),{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+// FAQ
+function toggleFAQ(el){el.classList.toggle('open')}
+</script>
+</body>
+</html>

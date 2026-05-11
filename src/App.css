@@ -1,0 +1,1711 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   MAKAN Property OS — Global Design System
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Light mode (default) ────────────────────────────────────────────────── */
+:root {
+  --ink:    #f1f5f9;
+  --ink2:   #ffffff;
+  --ink3:   #f8fafc;
+  --blue:   #4F46E5;
+  --blue2:  #6366f1;
+  --fog:    #475569;
+  --slate:  #94a3b8;
+  --white:  #0f172a;
+  --line:   rgba(148,163,184,0.22);
+}
+
+/* ── Dark mode — exact design system ────────────────────────────────────── */
+html.dark-mode {
+  --ink:    #060a14;   /* App shell */
+  --ink2:   #090e1c;   /* Sidebar */
+  --ink3:   #0d1526;   /* Cards & Modals */
+  --blue:   #1a3aff;   /* Primary CTA */
+  --blue2:  #2d4fff;   /* Hover */
+  --blue3:  #0f2acc;   /* Dark */
+  --gold:   #f5a623;
+  --gold2:  #ffcf68;
+  --teal:   #00d4ff;
+  --green:  #00e676;
+  --red:    #ff4444;
+  --white:  #ffffff;
+  --mist:   #e8eeff;
+  --fog:    #9aabcc;
+  --slate:  #3e4f72;
+  --line:   rgba(255,255,255,0.07);
+  --glass:  rgba(255,255,255,0.032);
+  --glass2: rgba(255,255,255,0.055);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LIGHT MODE — Card hover
+   ══════════════════════════════════════════════════════════════════════════ */
+.makan-card:hover {
+  box-shadow: 0 12px 40px rgba(100,110,180,0.14) !important;
+  transform: translateY(-3px);
+  border-color: rgba(175,185,230,0.95) !important;
+}
+.shortlist-btn:hover { transform: scale(1.06); filter: brightness(1.05); }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — LAYER 1: APP SHELL (#060a14 --ink)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-root {
+  background: #060a14 !important;
+  color: #ffffff !important;
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif !important;
+}
+html.dark-mode .makan-main {
+  background: #060a14 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — LAYER 2: SIDEBAR (#090e1c --ink2)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-sidebar {
+  background: #090e1c !important;
+  border-right: 1px solid #3e4f72 !important;
+}
+
+/* Sidebar section labels */
+html.dark-mode .makan-sidebar div[style*="color:'#334155'"],
+html.dark-mode .makan-sidebar div[style*='color:"#334155"'],
+html.dark-mode .makan-sidebar div[style*="color:#334155"] {
+  color: #3e4f72 !important;
+  font-family: 'Cairo', sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 1px !important;
+}
+
+/* Sidebar inactive buttons */
+html.dark-mode .makan-sidebar button[style*="color:#64748b"],
+html.dark-mode .makan-sidebar button[style*='color:"#64748b"'] {
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-sidebar button[style*="color:#64748b"] span,
+html.dark-mode .makan-sidebar a[style*="color:#64748b"] span {
+  color: #9aabcc !important;
+}
+
+/* Sidebar active button */
+html.dark-mode .makan-sidebar button[style*="rgba(99,102,241,0.22)"] {
+  background: rgba(26,58,255,0.18) !important;
+  color: #ffffff !important;
+  box-shadow: inset 0 0 0 1px rgba(26,58,255,0.4) !important;
+}
+html.dark-mode .makan-sidebar button[style*="rgba(99,102,241,0.22)"] span {
+  color: #ffffff !important;
+}
+html.dark-mode .makan-sidebar button[style*="rgba(99,102,241,0.22)"] div {
+  color: #ffffff !important;
+}
+
+/* Sidebar logo border */
+html.dark-mode .makan-sidebar div[style*="borderBottom"] {
+  border-color: rgba(62,79,114,0.5) !important;
+}
+
+/* Sidebar bottom section */
+html.dark-mode .makan-sidebar div[style*="borderTop"] {
+  border-color: rgba(62,79,114,0.5) !important;
+}
+
+/* Sidebar collapse button */
+html.dark-mode .makan-sidebar button[style*="rgba(255,255,255,0.08)"] {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(62,79,114,0.4) !important;
+  color: #9aabcc !important;
+}
+
+/* Sidebar bottom pills (currency, lang, dark toggle) */
+html.dark-mode .makan-sidebar button[style*="rgba(255,255,255,0.08)"][style*="fontSize:10"],
+html.dark-mode .makan-sidebar button[style*="rgba(255,255,255,0.08)"][style*="font-size: 10"] {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: rgba(62,79,114,0.5) !important;
+  color: #9aabcc !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — LAYER 3: CARDS & MODALS (#0d1526 --ink3)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Stat cards */
+html.dark-mode .makan-stat-card {
+  background: #0d1526 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid #3e4f72 !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4) !important;
+}
+html.dark-mode .makan-stat-card:hover {
+  background: #111b33 !important;
+  border-color: rgba(26,58,255,0.45) !important;
+  box-shadow: 0 8px 32px rgba(26,58,255,0.15), 0 0 0 1px rgba(26,58,255,0.2) !important;
+  transform: translateY(-2px);
+}
+html.dark-mode .makan-stat-label { color: #9aabcc !important; font-family: 'Cairo', sans-serif !important; font-size: 12px !important; letter-spacing: 0 !important; text-transform: none !important; }
+html.dark-mode .makan-stat-value { color: #ffffff !important; font-family: 'Cairo', 'Inter', sans-serif !important; }
+html.dark-mode .makan-stat-sub   { color: #9aabcc !important; font-family: 'Cairo', sans-serif !important; }
+
+/* General card class */
+html.dark-mode .makan-card {
+  background: #0d1526 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid #3e4f72 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35) !important;
+}
+html.dark-mode .makan-card:hover {
+  background: #111b33 !important;
+  border-color: rgba(26,58,255,0.4) !important;
+  box-shadow: 0 8px 32px rgba(26,58,255,0.12) !important;
+}
+
+/* All glass/blur → ink3 solid */
+html.dark-mode .makan-main div[style*="blur"],
+html.dark-mode .makan-main div[style*="backdropFilter"],
+html.dark-mode .makan-main div[style*="BackdropFilter"] {
+  background: #0d1526 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #3e4f72 !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35) !important;
+}
+
+/* White / near-white → ink3 */
+html.dark-mode .makan-main div[style*="rgba(255,255,255,0.4"],
+html.dark-mode .makan-main div[style*="rgba(255,255,255,0.5"],
+html.dark-mode .makan-main div[style*="rgba(255,255,255,0.6"],
+html.dark-mode .makan-main div[style*="rgba(255,255,255,0.7"],
+html.dark-mode .makan-main div[style*="rgba(255,255,255,0.8"],
+html.dark-mode .makan-main div[style*="rgba(255,255,255,0.9"],
+html.dark-mode .makan-main div[style*="#fff"],
+html.dark-mode .makan-main div[style*="white"],
+html.dark-mode .makan-main div[style*="#f8fafc"],
+html.dark-mode .makan-main div[style*="#f1f5f9"],
+html.dark-mode .makan-main div[style*="#f9fafb"],
+html.dark-mode .makan-main div[style*="#f0f4ff"] {
+  background: #0d1526 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #3e4f72 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — PRIMARY CTAs (#1a3aff --blue)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode button[style*="#4F46E5"],
+html.dark-mode button[style*="#4f46e5"],
+html.dark-mode a[style*="#4F46E5"] {
+  background: #1a3aff !important;
+  box-shadow: 0 6px 24px rgba(26,58,255,0.4) !important;
+}
+html.dark-mode button[style*="#4F46E5"]:hover,
+html.dark-mode button[style*="#4f46e5"]:hover {
+  background: #2d4fff !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — TYPOGRAPHY (Cairo font)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-main * {
+  font-family: 'Cairo', 'Tajawal', 'Inter', sans-serif !important;
+}
+html.dark-mode .makan-main h1,
+html.dark-mode .makan-main h2,
+html.dark-mode .makan-main h3,
+html.dark-mode .makan-main h4 { color: #ffffff !important; }
+
+/* Dark text → white */
+html.dark-mode .makan-main div[style*="color:#0f172a"],
+html.dark-mode .makan-main div[style*="color: #0f172a"],
+html.dark-mode .makan-main span[style*="color:#0f172a"],
+html.dark-mode .makan-main span[style*="color:#1e293b"],
+html.dark-mode .makan-main span[style*="color:#334155"] { color: #ffffff !important; }
+
+/* Mid gray → fog */
+html.dark-mode .makan-main span[style*="color:#475569"],
+html.dark-mode .makan-main span[style*="color:#64748b"],
+html.dark-mode .makan-main div[style*="color:#475569"],
+html.dark-mode .makan-main div[style*="color:#64748b"],
+html.dark-mode .makan-main div[style*="color:#94a3b8"] { color: #9aabcc !important; }
+
+/* Small labels → bigger, Cairo */
+html.dark-mode .makan-main span[style*="font-size: 10px"],
+html.dark-mode .makan-main div[style*="font-size: 10px"]  { font-size: 12px !important; color: #9aabcc !important; letter-spacing: 0 !important; text-transform: none !important; }
+html.dark-mode .makan-main span[style*="font-size: 11px"],
+html.dark-mode .makan-main div[style*="font-size: 11px"]  { font-size: 13px !important; }
+html.dark-mode .makan-main span[style*="font-size: 12px"],
+html.dark-mode .makan-main div[style*="font-size: 12px"]  { font-size: 13px !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — INPUTS
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode input,
+html.dark-mode select,
+html.dark-mode textarea {
+  background: rgba(13,21,38,0.9) !important;
+  border-color: #3e4f72 !important;
+  color: #ffffff !important;
+  caret-color: #1a3aff !important;
+  font-family: 'Cairo', sans-serif !important;
+}
+html.dark-mode input:focus,
+html.dark-mode select:focus,
+html.dark-mode textarea:focus {
+  border-color: #1a3aff !important;
+  box-shadow: 0 0 0 3px rgba(26,58,255,0.15) !important;
+  outline: none !important;
+}
+html.dark-mode input::placeholder,
+html.dark-mode textarea::placeholder { color: #3e4f72 !important; opacity: 1 !important; }
+html.dark-mode select option { background: #0d1526 !important; color: #ffffff !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — TABLES
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode table { background: transparent !important; }
+html.dark-mode table th {
+  background: rgba(26,58,255,0.1) !important;
+  color: #9aabcc !important;
+  border-color: #3e4f72 !important;
+  font-family: 'Cairo', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+html.dark-mode table td {
+  border-color: rgba(62,79,114,0.4) !important;
+  color: #ffffff !important;
+  font-family: 'Cairo', sans-serif !important;
+}
+html.dark-mode table tr:hover td { background: rgba(26,58,255,0.06) !important; }
+html.dark-mode table tr:nth-child(even) td { background: rgba(255,255,255,0.01) !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — NAV BAR
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-nav {
+  background: rgba(9,14,28,0.97) !important;
+  border-color: #3e4f72 !important;
+  backdrop-filter: blur(24px) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — MISC
+   ══════════════════════════════════════════════════════════════════════════ */
+/* Progress bars */
+html.dark-mode .makan-main div[style*="rgba(241,245,249"] { background: rgba(255,255,255,0.06) !important; }
+
+/* Dividers */
+html.dark-mode .makan-main div[style*="height:1px"],
+html.dark-mode .makan-main div[style*="height: 1px"],
+html.dark-mode .makan-main div[style*="#e2e8f0"] { background: rgba(62,79,114,0.4) !important; }
+
+/* Scrollbars */
+html.dark-mode ::-webkit-scrollbar             { width: 5px; height: 5px; }
+html.dark-mode ::-webkit-scrollbar-track       { background: #060a14; }
+html.dark-mode ::-webkit-scrollbar-thumb       { background: rgba(62,79,114,0.8); border-radius: 4px; }
+html.dark-mode ::-webkit-scrollbar-thumb:hover { background: #1a3aff; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — CALENDAR
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-cal-wrapper {
+  background: #090e1c !important;
+  border-color: #3e4f72 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+html.dark-mode .makan-cal-headers {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+}
+html.dark-mode .makan-cal-headers > div { color: #3e4f72 !important; }
+html.dark-mode .makan-cal-grid { background: #090e1c !important; }
+html.dark-mode .makan-cal-cell {
+  background: #090e1c !important;
+  border-color: rgba(62,79,114,0.3) !important;
+  color: #e8eeff !important;
+}
+html.dark-mode .makan-cal-cell:hover { background: #0d1526 !important; }
+html.dark-mode .makan-cal-cell-empty {
+  background: #060a14 !important;
+  border-color: rgba(62,79,114,0.2) !important;
+}
+html.dark-mode .makan-cal-cell div[style*="color: #0f172a"],
+html.dark-mode .makan-cal-cell div[style*="color:#0f172a"] { color: #e8eeff !important; }
+
+/* Navigation buttons for calendar */
+html.dark-mode .makan-main button[style*="#f1f5f9"][style*="border"] {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-main button[style*="#f1f5f9"][style*="border"]:hover {
+  background: #111b33 !important;
+  color: #ffffff !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — ORG CHART
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-orgchart-canvas {
+  background: #060a14 !important;
+  border-color: #3e4f72 !important;
+}
+html.dark-mode .makan-orgchart-node {
+  border-color: inherit !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
+}
+/* Non-selected nodes: ink3 background */
+html.dark-mode .makan-orgchart-node[style*="background: #fff"],
+html.dark-mode .makan-orgchart-node[style*="background:#fff"],
+html.dark-mode .makan-orgchart-node[style*="background: rgb(255, 255, 255)"] {
+  background: #0d1526 !important;
+}
+html.dark-mode .makan-orgchart-node div[style*="color:#0f172a"],
+html.dark-mode .makan-orgchart-node div[style*="color: #0f172a"] { color: #ffffff !important; }
+
+html.dark-mode .makan-orgchart-detail {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+}
+html.dark-mode .makan-orgchart-detail div[style*="background:#f8fafc"],
+html.dark-mode .makan-orgchart-detail div[style*="background: #f8fafc"] {
+  background: rgba(13,21,38,0.8) !important;
+}
+html.dark-mode .makan-orgchart-detail div[style*="color:#0f172a"],
+html.dark-mode .makan-orgchart-detail span[style*="color:#0f172a"] { color: #ffffff !important; }
+html.dark-mode .makan-orgchart-detail div[style*="background:#fff2f2"] {
+  background: rgba(255,68,68,0.1) !important;
+  border-color: rgba(255,68,68,0.2) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — AUTOMATIONS CANVAS
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-auto-canvas {
+  background: #060a14 !important;
+  border-color: #3e4f72 !important;
+  box-shadow: none !important;
+}
+html.dark-mode .makan-auto-canvas div[style*="color:#64748b"],
+html.dark-mode .makan-auto-canvas div[style*="color: #64748b"],
+html.dark-mode .makan-auto-canvas p[style*="color:#64748b"] { color: #9aabcc !important; }
+html.dark-mode .makan-auto-canvas p[style*="color:#94a3b8"] { color: #3e4f72 !important; }
+/* Auto rules cards */
+html.dark-mode .makan-auto-canvas > div > div[style*="rgba(255,255,255"] {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — AI ASSISTANT
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-ai-messages {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+  box-shadow: none !important;
+}
+html.dark-mode .makan-ai-bubble {
+  background: #090e1c !important;
+  border-color: #3e4f72 !important;
+  color: #e8eeff !important;
+}
+html.dark-mode .makan-ai-bubble div[style*="color:#0f172a"] { color: #e8eeff !important; }
+html.dark-mode .makan-ai-messages p[style*="color:#0f172a"]   { color: #ffffff !important; }
+html.dark-mode .makan-ai-messages p[style*="color:#94a3b8"]   { color: #9aabcc !important; }
+html.dark-mode .makan-ai-input-bar {
+  background: #090e1c !important;
+  border-color: #3e4f72 !important;
+  box-shadow: none !important;
+}
+html.dark-mode .makan-ai-input-bar input {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — CHAT
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-chat-wrapper {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+  box-shadow: none !important;
+}
+html.dark-mode .makan-chat-sidebar {
+  background: #090e1c !important;
+  border-color: rgba(62,79,114,0.5) !important;
+}
+html.dark-mode .makan-chat-sidebar div[style*="background:#fafafa"],
+html.dark-mode .makan-chat-sidebar div[style*="background: #fafafa"] { background: #090e1c !important; }
+html.dark-mode .makan-chat-wrapper div[style*="padding:'12px 18px'"],
+html.dark-mode .makan-chat-wrapper div[style*="padding: 12px 18px"] {
+  background: #0d1526 !important;
+  border-color: rgba(62,79,114,0.4) !important;
+}
+html.dark-mode .makan-chat-wrapper div[style*="background:#fff"],
+html.dark-mode .makan-chat-wrapper div[style*="background: #fff"] { background: #0d1526 !important; }
+html.dark-mode .makan-chat-wrapper div[style*="background:#f1f5f9"],
+html.dark-mode .makan-chat-wrapper div[style*="background: #f1f5f9"] {
+  background: rgba(9,14,28,0.8) !important;
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-chat-input-bar {
+  background: #090e1c !important;
+  border-color: rgba(62,79,114,0.5) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — BUTTONS Architecture
+   ══════════════════════════════════════════════════════════════════════════ */
+/* Primary CTAs: force --blue */
+html.dark-mode .makan-main button[style*="linear-gradient"][style*="accent"],
+html.dark-mode .makan-main button[style*="linear-gradient(135deg,#4F46E5"],
+html.dark-mode .makan-main button[style*="linear-gradient(135deg, #4F46E5"] {
+  background: #1a3aff !important;
+  box-shadow: 0 4px 20px rgba(26,58,255,0.4) !important;
+}
+html.dark-mode .makan-main button[style*="linear-gradient"][style*="accent"]:hover,
+html.dark-mode .makan-main button[style*="background: linear-gradient"]:hover {
+  background: #2d4fff !important;
+}
+
+/* Secondary/filter buttons: ink2 + slate border */
+html.dark-mode .makan-main button[style*="background:#f1f5f9"],
+html.dark-mode .makan-main button[style*="background: #f1f5f9"],
+html.dark-mode .makan-main button[style*="background:#f8fafc"],
+html.dark-mode .makan-main button[style*="background: #f8fafc"] {
+  background: #090e1c !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-main button[style*="background:#f1f5f9"]:hover,
+html.dark-mode .makan-main button[style*="background:#f8fafc"]:hover {
+  background: #0d1526 !important;
+  color: #ffffff !important;
+  border-color: rgba(26,58,255,0.4) !important;
+}
+
+/* Active filter buttons */
+html.dark-mode .makan-main button[style*="background:#090e1c"],
+html.dark-mode .makan-main button[style*="background: #090e1c"] {
+  border-color: #1a3aff !important;
+  color: #ffffff !important;
+}
+
+/* Send button when active */
+html.dark-mode .makan-main button[style*="linear-gradient(135deg,#4F46E5"]:not([disabled]) {
+  background: #1a3aff !important;
+  box-shadow: 0 4px 14px rgba(26,58,255,0.4) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — GLOBAL FONT & TEXT IN BOXES
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* All text inside any surface/card/box → white */
+html.dark-mode .makan-main input,
+html.dark-mode .makan-main select,
+html.dark-mode .makan-main textarea,
+html.dark-mode .makan-main label { color: #e8eeff !important; font-family: 'Cairo', sans-serif !important; }
+
+/* All page headings → white */
+html.dark-mode .makan-main h1 { color: #ffffff !important; font-size: inherit !important; }
+html.dark-mode .makan-main h2 { color: #ffffff !important; }
+html.dark-mode .makan-main h3 { color: #e8eeff !important; }
+
+/* General text in any box div → mist */
+html.dark-mode .makan-main span  { color: inherit; }
+html.dark-mode .makan-main p     { color: #9aabcc !important; }
+
+/* All borders → slate */
+html.dark-mode .makan-main [style*="border: 1.5px solid rgba(226,232,240"],
+html.dark-mode .makan-main [style*="border:1.5px solid rgba(226,232,240"],
+html.dark-mode .makan-main [style*="border: 1px solid rgba(226,232,240"],
+html.dark-mode .makan-main [style*="border:1px solid rgba(226,232,240"],
+html.dark-mode .makan-main [style*="border: 1.5px solid #e2e8f0"],
+html.dark-mode .makan-main [style*="border:1.5px solid #e2e8f0"],
+html.dark-mode .makan-main [style*="border: 1px solid #e2e8f0"],
+html.dark-mode .makan-main [style*="border:1px solid #e2e8f0"],
+html.dark-mode .makan-main [style*="border: 1px solid #f1f5f9"],
+html.dark-mode .makan-main [style*="border:1px solid #f1f5f9"],
+html.dark-mode .makan-main [style*="border: 1.5px solid #f1f5f9"],
+html.dark-mode .makan-main [style*="borderColor:'#e2e8f0'"],
+html.dark-mode .makan-main [style*="borderColor: '#e2e8f0'"] {
+  border-color: #3e4f72 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — GLOBAL TOOL BUTTONS (all tabs)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Any outlined/ghost button with transparent or light bg → dark style */
+html.dark-mode .makan-main button[style*="rgba(255,255,255,0.8)"],
+html.dark-mode .makan-main label[style*="rgba(255,255,255,0.8)"] {
+  background: rgba(62,79,114,0.2) !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+
+/* Soft-colored accent buttons (12-15% opacity) → keep but adjust */
+html.dark-mode .makan-main button[style*="0.12)"],
+html.dark-mode .makan-main button[style*="0.14)"],
+html.dark-mode .makan-main button[style*="0.15)"],
+html.dark-mode .makan-main label[style*="0.12)"],
+html.dark-mode .makan-main label[style*="0.14)"],
+html.dark-mode .makan-main label[style*="0.15)"] {
+  box-shadow: none !important;
+}
+html.dark-mode .makan-main button[style*="0.12)"] span,
+html.dark-mode .makan-main button[style*="0.14)"] span,
+html.dark-mode .makan-main button[style*="0.15)"] span { color: inherit !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — LEADS TOOLBAR BUTTONS
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Generic tool button in dark mode */
+html.dark-mode .makan-btn-tool {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  font-family: 'Cairo', sans-serif !important;
+  transition: all 0.18s ease !important;
+}
+
+/* PDF button → soft purple accent */
+html.dark-mode .makan-btn-pdf {
+  background: rgba(124,58,237,0.12) !important;
+  border-color: rgba(124,58,237,0.3) !important;
+  color: #a78bfa !important;
+}
+html.dark-mode .makan-btn-pdf:hover {
+  background: rgba(124,58,237,0.2) !important;
+  border-color: rgba(124,58,237,0.5) !important;
+}
+
+/* CSV button → soft slate */
+html.dark-mode .makan-btn-csv {
+  background: rgba(62,79,114,0.2) !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-btn-csv:hover {
+  background: rgba(62,79,114,0.35) !important;
+  color: #e8eeff !important;
+}
+
+/* Excel button → keep green, make softer */
+html.dark-mode .makan-btn-excel {
+  background: rgba(22,163,74,0.12) !important;
+  border-color: rgba(22,163,74,0.3) !important;
+  color: #00e676 !important;
+}
+html.dark-mode .makan-btn-excel:hover {
+  background: rgba(22,163,74,0.2) !important;
+  border-color: rgba(22,163,74,0.5) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — STAGE FILTER PILLS
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Default pill: ink2 bg + slate border */
+html.dark-mode .makan-stage-pill {
+  background: #090e1c !important;
+  border-color: #3e4f72 !important;
+  box-shadow: none !important;
+}
+html.dark-mode .makan-stage-pill:hover {
+  background: #0d1526 !important;
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
+/* Number inside pill → white */
+html.dark-mode .makan-stage-pill div[style*="color:#0f172a"],
+html.dark-mode .makan-stage-pill div[style*="color: #0f172a"] {
+  color: #ffffff !important;
+}
+
+/* Stage label text → fog */
+html.dark-mode .makan-stage-pill span[style*="color:#334155"],
+html.dark-mode .makan-stage-pill span[style*="color:#475569"],
+html.dark-mode .makan-stage-pill span[style*="fontSize:10"],
+html.dark-mode .makan-stage-pill > div:last-child {
+  color: #9aabcc !important;
+}
+
+/* Active pill: use the stage color softly */
+html.dark-mode .makan-stage-pill--active {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: var(--s-color, #1a3aff) !important;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--s-color, #1a3aff) 40%, transparent),
+              0 4px 14px color-mix(in srgb, var(--s-color, #1a3aff) 20%, transparent) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — BADGES (Soft Accent System)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Role badges — premium soft accent */
+html.dark-mode .makan-role-badge--admin {
+  background: rgba(26,58,255,0.12) !important;
+  color: #7a9fff !important;
+  border-color: rgba(26,58,255,0.25) !important;
+}
+html.dark-mode .makan-role-badge--listing {
+  background: rgba(0,212,255,0.10) !important;
+  color: #00d4ff !important;
+  border-color: rgba(0,212,255,0.22) !important;
+}
+html.dark-mode .makan-role-badge--sales {
+  background: rgba(0,230,118,0.10) !important;
+  color: #00e676 !important;
+  border-color: rgba(0,230,118,0.22) !important;
+}
+
+/* "حسابك / You" badge — soft gold */
+html.dark-mode .makan-you-badge {
+  background: rgba(245,166,35,0.12) !important;
+  color: #f5a623 !important;
+  border-color: rgba(245,166,35,0.25) !important;
+}
+
+/* Agent ID badge — slate */
+html.dark-mode .makan-agent-id {
+  background: rgba(62,79,114,0.3) !important;
+  border-color: rgba(62,79,114,0.5) !important;
+  color: #9aabcc !important;
+}
+
+/* General badge pattern in dark mode — any pill with bright bg */
+html.dark-mode .makan-main span[style*="background:#fef9c3"],
+html.dark-mode .makan-main span[style*="background: #fef9c3"],
+html.dark-mode .makan-main span[style*="background:#f3e5f5"],
+html.dark-mode .makan-main span[style*="background: #f3e5f5"],
+html.dark-mode .makan-main span[style*="background:#e3f2fd"],
+html.dark-mode .makan-main span[style*="background: #e3f2fd"],
+html.dark-mode .makan-main span[style*="background:#e8f5e9"],
+html.dark-mode .makan-main span[style*="background: #e8f5e9"],
+html.dark-mode .makan-main span[style*="background:#dbeafe"],
+html.dark-mode .makan-main span[style*="background: #dbeafe"] {
+  filter: saturate(0.6) brightness(0.75) !important;
+}
+
+/* Sidebar nav badges */
+html.dark-mode .makan-sidebar span[style*="background:#4F46E5"],
+html.dark-mode .makan-sidebar span[style*="background: #4F46E5"],
+html.dark-mode .makan-sidebar span[style*="background:#6366f1"] {
+  background: rgba(26,58,255,0.9) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — GLOBAL BUTTON ARCHITECTURE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. PRIMARY BUTTONS: Solid #1a3aff, no gradient, no glow ────────────── */
+html.dark-mode .makan-main button[style*="linear-gradient"],
+html.dark-mode .makan-sidebar button[style*="linear-gradient"] {
+  background: #1a3aff !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+html.dark-mode .makan-main button[style*="linear-gradient"]:hover,
+html.dark-mode .makan-sidebar button[style*="linear-gradient"]:hover {
+  background: #2d4fff !important;
+  box-shadow: 0 4px 16px rgba(26,58,255,0.35) !important;
+  transform: translateY(-1px) !important;
+}
+html.dark-mode .makan-main button[style*="linear-gradient"]:disabled,
+html.dark-mode .makan-main button[style*="linear-gradient"][disabled] {
+  background: rgba(26,58,255,0.35) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* ── 2. PRIMARY solid blue buttons ──────────────────────────────────────── */
+html.dark-mode .makan-main button[style*="background:#4F46E5"],
+html.dark-mode .makan-main button[style*="background: #4F46E5"],
+html.dark-mode .makan-main button[style*="background:#4f46e5"] {
+  background: #1a3aff !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+html.dark-mode .makan-main button[style*="background:#4F46E5"]:hover { background: #2d4fff !important; }
+
+/* ── 3. SECONDARY / OUTLINE BUTTONS ─────────────────────────────────────── */
+html.dark-mode .makan-btn-secondary {
+  background: transparent !important;
+  border-color: #3e4f72 !important;
+  color: #e8eeff !important;
+  box-shadow: none !important;
+}
+html.dark-mode .makan-btn-secondary:hover {
+  background: rgba(26,58,255,0.1) !important;
+  border-color: rgba(26,58,255,0.4) !important;
+  color: #ffffff !important;
+}
+
+/* Filter/secondary buttons (light gray bg) → dark outline */
+html.dark-mode .makan-main button[style*="background:#f1f5f9"],
+html.dark-mode .makan-main button[style*="background: #f1f5f9"],
+html.dark-mode .makan-main button[style*="background:'#f1f5f9'"],
+html.dark-mode .makan-main button[style*="background:#f8fafc"],
+html.dark-mode .makan-main button[style*="background: #f8fafc"],
+html.dark-mode .makan-main button[style*="background:#fff"],
+html.dark-mode .makan-main button[style*="background: #fff"],
+html.dark-mode .makan-main button[style*="background: white"] {
+  background: transparent !important;
+  border-color: #3e4f72 !important;
+  color: #e8eeff !important;
+  box-shadow: none !important;
+}
+html.dark-mode .makan-main button[style*="background:#f1f5f9"]:hover,
+html.dark-mode .makan-main button[style*="background:#f8fafc"]:hover,
+html.dark-mode .makan-main button[style*="background:#fff"]:hover {
+  background: rgba(26,58,255,0.1) !important;
+  border-color: rgba(26,58,255,0.4) !important;
+  color: #ffffff !important;
+}
+
+/* ── 4. DANGER / DELETE BUTTONS ─────────────────────────────────────────── */
+html.dark-mode .makan-main button[style*="background:#fff2f2"],
+html.dark-mode .makan-main button[style*="background: #fff2f2"],
+html.dark-mode .makan-main a[style*="background:#fff2f2"] {
+  background: rgba(255,68,68,0.1) !important;
+  border-color: rgba(255,68,68,0.25) !important;
+  color: #ff4444 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — BLACK COLOR PURGE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Black text → white */
+html.dark-mode .makan-main *[style*="color: black"],
+html.dark-mode .makan-main *[style*="color:black"],
+html.dark-mode .makan-main *[style*="color: #000"],
+html.dark-mode .makan-main *[style*="color:#000"],
+html.dark-mode .makan-main *[style*="color: #000000"],
+html.dark-mode .makan-main *[style*="color:#000000"] {
+  color: #e8eeff !important;
+}
+
+/* Very dark grays → mist */
+html.dark-mode .makan-main *[style*="color: #0f172a"],
+html.dark-mode .makan-main *[style*="color:#0f172a"],
+html.dark-mode .makan-main *[style*="color: #1e293b"],
+html.dark-mode .makan-main *[style*="color:#1e293b"],
+html.dark-mode .makan-main *[style*="color: #1a1a2e"],
+html.dark-mode .makan-main *[style*="color:#1a1a2e"] {
+  color: #ffffff !important;
+}
+
+/* Mid-gray → fog */
+html.dark-mode .makan-main *[style*="color: #334155"],
+html.dark-mode .makan-main *[style*="color:#334155"],
+html.dark-mode .makan-main *[style*="color: #475569"],
+html.dark-mode .makan-main *[style*="color:#475569"],
+html.dark-mode .makan-main *[style*="color: #64748b"],
+html.dark-mode .makan-main *[style*="color:#64748b"] {
+  color: #9aabcc !important;
+}
+
+/* Light gray → slate (muted labels) */
+html.dark-mode .makan-main *[style*="color: #94a3b8"],
+html.dark-mode .makan-main *[style*="color:#94a3b8"],
+html.dark-mode .makan-main *[style*="color: #cbd5e1"],
+html.dark-mode .makan-main *[style*="color:#cbd5e1"] {
+  color: #3e4f72 !important;
+}
+
+/* Black borders → slate */
+html.dark-mode .makan-main *[style*="border: 1.5px solid #e2e8f0"],
+html.dark-mode .makan-main *[style*="border:1.5px solid #e2e8f0"],
+html.dark-mode .makan-main *[style*="border: 1px solid #e2e8f0"],
+html.dark-mode .makan-main *[style*="border:1px solid #e2e8f0"],
+html.dark-mode .makan-main *[style*="borderColor:'#e2e8f0'"],
+html.dark-mode .makan-main *[style*="border-color: #e2e8f0"] {
+  border-color: #3e4f72 !important;
+}
+html.dark-mode .makan-main *[style*="border: 1px solid #f1f5f9"],
+html.dark-mode .makan-main *[style*="border:1px solid #f1f5f9"],
+html.dark-mode .makan-main *[style*="borderRight: '1px solid #f1f5f9'"],
+html.dark-mode .makan-main *[style*="borderBottom: '1px solid #f1f5f9'"] {
+  border-color: rgba(62,79,114,0.3) !important;
+}
+
+/* Password dots color */
+html.dark-mode .makan-main *[style*="color:#cbd5e1"][style*="letterSpacing:3"] {
+  color: #3e4f72 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — STATUS INDICATORS
+   ══════════════════════════════════════════════════════════════════════════ */
+/* Green "active" label */
+html.dark-mode .makan-main div[style*="background:#f0fdf4"],
+html.dark-mode .makan-main div[style*="background: #f0fdf4"],
+html.dark-mode .makan-main span[style*="background:#f0fdf4"] {
+  background: rgba(0,230,118,0.10) !important;
+  border-color: rgba(0,230,118,0.2) !important;
+  color: #00e676 !important;
+}
+html.dark-mode .makan-main div[style*="background:#dcfce7"],
+html.dark-mode .makan-main span[style*="background:#dcfce7"] {
+  background: rgba(0,230,118,0.10) !important;
+  border-color: rgba(0,230,118,0.2) !important;
+  color: #00e676 !important;
+}
+html.dark-mode .makan-main div[style*="background:rgba(239,68,68"],
+html.dark-mode .makan-main span[style*="background:rgba(239,68,68"],
+html.dark-mode .makan-main div[style*="background:#fee2e2"],
+html.dark-mode .makan-main span[style*="background:#fee2e2"] {
+  background: rgba(255,68,68,0.10) !important;
+  border-color: rgba(255,68,68,0.2) !important;
+  color: #ff4444 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — AVATARS & INITIALS
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-main div[style*="background:'#f1f5f9'"][style*="borderRadius:'50%'"],
+html.dark-mode .makan-main div[style*="background:#f1f5f9"][style*="border-radius: 50%"] {
+  background: rgba(26,58,255,0.15) !important;
+  color: #7a9fff !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   TRANSITIONS
+   ══════════════════════════════════════════════════════════════════════════ */
+.makan-root, .makan-main, .makan-sidebar, .makan-card, .makan-stat-card, .makan-nav,
+.makan-cal-wrapper, .makan-cal-cell, .makan-orgchart-canvas, .makan-orgchart-node,
+.makan-orgchart-detail, .makan-auto-canvas, .makan-ai-messages, .makan-ai-input-bar,
+.makan-chat-wrapper, .makan-chat-sidebar, .makan-chat-input-bar,
+.makan-role-badge, .makan-you-badge, .makan-btn-secondary, .makan-agent-id {
+  transition: background 0.28s ease, border-color 0.28s ease,
+              color 0.28s ease, box-shadow 0.28s ease !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — MODALS (all popups)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-modal {
+  background: #0d1526 !important;
+  border: 1px solid #3e4f72 !important;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(26,58,255,0.1) !important;
+}
+html.dark-mode .makan-modal h2,
+html.dark-mode .makan-modal h3 { color: #ffffff !important; }
+html.dark-mode .makan-modal p,
+html.dark-mode .makan-modal label { color: #9aabcc !important; font-family: 'Cairo', sans-serif !important; }
+html.dark-mode .makan-modal input,
+html.dark-mode .makan-modal select,
+html.dark-mode .makan-modal textarea {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: #3e4f72 !important;
+  color: #ffffff !important;
+}
+html.dark-mode .makan-modal input::placeholder { color: #3e4f72 !important; }
+/* Checkboxes & member list inside modal */
+html.dark-mode .makan-modal div[style*="background:#f8fafc"],
+html.dark-mode .makan-modal div[style*="background: #f8fafc"],
+html.dark-mode .makan-modal div[style*="background:#f1f5f9"],
+html.dark-mode .makan-modal div[style*="background: #f1f5f9"] {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: #3e4f72 !important;
+}
+html.dark-mode .makan-modal div[style*="color:#0f172a"],
+html.dark-mode .makan-modal span[style*="color:#0f172a"] { color: #ffffff !important; }
+html.dark-mode .makan-modal div[style*="color:#475569"],
+html.dark-mode .makan-modal span[style*="color:#475569"],
+html.dark-mode .makan-modal div[style*="color:#64748b"],
+html.dark-mode .makan-modal span[style*="color:#64748b"] { color: #9aabcc !important; }
+
+/* Cancel button inside modal */
+html.dark-mode .makan-modal button[style*="background:'#f1f5f9'"],
+html.dark-mode .makan-modal button[style*="background:#f1f5f9"],
+html.dark-mode .makan-modal button[style*="border:'1.5px solid #e0e3e9'"],
+html.dark-mode .makan-modal button[style*="color:'#64748b'"],
+html.dark-mode .makan-modal button[style*="color:#64748b"] {
+  background: transparent !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — CALENDAR (visibility fix)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-cal-wrapper {
+  border: 1px solid #3e4f72 !important;
+}
+html.dark-mode .makan-cal-headers > div {
+  color: #9aabcc !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+html.dark-mode .makan-cal-cell {
+  background: #090e1c !important;
+  border-color: rgba(62,79,114,0.4) !important;
+}
+html.dark-mode .makan-cal-cell:hover {
+  background: #0d1526 !important;
+}
+/* Day numbers inside cells */
+html.dark-mode .makan-cal-cell > div:first-child {
+  color: #e8eeff !important;
+}
+html.dark-mode .makan-cal-cell div[style*="color:'#0f172a'"],
+html.dark-mode .makan-cal-cell div[style*="color: #0f172a"],
+html.dark-mode .makan-cal-cell div[style*="color:#0f172a"] {
+  color: #e8eeff !important;
+}
+html.dark-mode .makan-cal-cell > div:first-child > div {
+  color: #9aabcc !important;
+}
+/* Today circle */
+html.dark-mode .makan-cal-cell div[style*="background: transparent"][style*="color: #0f172a"] {
+  color: #e8eeff !important;
+}
+/* Nav buttons for calendar month */
+html.dark-mode .makan-main > div button[style*="background:#f1f5f9"][style*="border:'1.5px solid #e2e8f0'"],
+html.dark-mode .makan-main button[style*="'#f1f5f9'"][style*="fontSize:14"] {
+  background: #090e1c !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — ORG CHART NODE TEXT VISIBILITY
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-orgchart-node div[style*="color:#0f172a"],
+html.dark-mode .makan-orgchart-node div[style*="color: #0f172a"] {
+  color: #ffffff !important;
+}
+html.dark-mode .makan-orgchart-node div[style*="fontSize:9"],
+html.dark-mode .makan-orgchart-node div[style*="fontSize: 9"] {
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-orgchart-node div[style*="fontSize:11"],
+html.dark-mode .makan-orgchart-node div[style*="fontSize: 11"],
+html.dark-mode .makan-orgchart-node div[style*="fontSize:12"],
+html.dark-mode .makan-orgchart-node div[style*="fontSize: 12"] {
+  color: #9aabcc !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — TEAM VIEW CARDS
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-main div[style*="background:'#fff'"][style*="borderRadius:18"],
+html.dark-mode .makan-main div[style*="background: #fff"][style*="border-radius: 18px"] {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — KANBAN COLUMNS (Sales Requests)
+   ══════════════════════════════════════════════════════════════════════════ */
+/* Kanban column headers */
+html.dark-mode .makan-main div[style*="background.*rgba.*0.08)"][style*="border.*0.15)"] {
+  border-color: rgba(62,79,114,0.5) !important;
+}
+/* Kanban cards */
+html.dark-mode .makan-main div[style*="background:'#fff'"][style*="borderRadius:14"],
+html.dark-mode .makan-main div[style*="background: #fff"][style*="border-radius: 14"] {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+}
+html.dark-mode .makan-main div[style*="background:#fff"][style*="borderRadius:14"] {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — KANBAN COLUMNS (Leads & Sales Requests)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-kanban-col {
+  background: #090e1c !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: rgba(62,79,114,0.5) !important;
+}
+html.dark-mode .makan-kanban-col:has(.makan-kanban-card) {
+  border-color: color-mix(in srgb, var(--stage-color, #3e4f72) 30%, #3e4f72) !important;
+}
+html.dark-mode .makan-kanban-stage-name {
+  color: #e8eeff !important;
+  font-family: 'Cairo', sans-serif !important;
+  font-size: 12px !important;
+}
+html.dark-mode .makan-kanban-card {
+  background: #0d1526 !important;
+  border-color: #3e4f72 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
+html.dark-mode .makan-kanban-card:hover {
+  background: #111b33 !important;
+  border-color: rgba(62,79,114,0.8) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4) !important;
+}
+html.dark-mode .makan-kanban-client { color: #ffffff !important; }
+html.dark-mode .makan-kanban-card div[style*="color:#0f172a"],
+html.dark-mode .makan-kanban-card div[style*="color: #0f172a"] { color: #ffffff !important; }
+html.dark-mode .makan-kanban-card div[style*="color:#64748b"],
+html.dark-mode .makan-kanban-card div[style*="color: #64748b"],
+html.dark-mode .makan-kanban-card span[style*="color:#64748b"] { color: #9aabcc !important; }
+html.dark-mode .makan-kanban-card div[style*="color:#94a3b8"],
+html.dark-mode .makan-kanban-card span[style*="color:#cbd5e1"] { color: #3e4f72 !important; }
+html.dark-mode .makan-kanban-card div[style*="borderTop:'1px solid #f1f5f9'"],
+html.dark-mode .makan-kanban-card div[style*="border-top: 1px solid #f1f5f9"] { border-color: rgba(62,79,114,0.4) !important; }
+/* Add button in kanban */
+html.dark-mode .makan-kanban-col > button { color: #9aabcc !important; border-color: rgba(62,79,114,0.5) !important; }
+html.dark-mode .makan-kanban-col > button:hover { background: rgba(26,58,255,0.08) !important; color: #7a9fff !important; border-color: rgba(26,58,255,0.3) !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LIGHT MODE — ACADEMY (override dark hardcoded colors)
+   ══════════════════════════════════════════════════════════════════════════ */
+:root:not(.dark-mode) .makan-academy {
+  /* Revert dark hardcoded styles to light-friendly ones */
+}
+html:not(.dark-mode) .makan-academy-sidebar {
+  background: rgba(248,250,252,0.95) !important;
+  border-color: rgba(148,163,184,0.3) !important;
+}
+html:not(.dark-mode) .makan-academy-sidebar button {
+  color: #475569 !important;
+}
+html:not(.dark-mode) .makan-academy-sidebar button[style*="rgba(26,58,255,0.18)"] {
+  background: rgba(79,70,229,0.1) !important;
+  color: #4F46E5 !important;
+  box-shadow: inset 0 0 0 1px rgba(79,70,229,0.3) !important;
+}
+html:not(.dark-mode) .makan-academy-sidebar div[style*="borderBottom"] {
+  border-color: rgba(148,163,184,0.25) !important;
+}
+html:not(.dark-mode) .makan-academy-sidebar span[style*="color:'#9aabcc'"],
+html:not(.dark-mode) .makan-academy-sidebar span[style*="color: #9aabcc"] {
+  color: #64748b !important;
+}
+/* Academy main content panel */
+html:not(.dark-mode) .makan-academy > div:last-child {
+  background: rgba(255,255,255,0.92) !important;
+  border-color: rgba(148,163,184,0.3) !important;
+}
+html:not(.dark-mode) .makan-academy div[style*="color:'#e8eeff'"],
+html:not(.dark-mode) .makan-academy div[style*="color: #e8eeff"],
+html:not(.dark-mode) .makan-academy span[style*="color:'#e8eeff'"],
+html:not(.dark-mode) .makan-academy *[style*="color:#e8eeff"] { color: #0f172a !important; }
+html:not(.dark-mode) .makan-academy *[style*="color:#9aabcc"] { color: #64748b !important; }
+html:not(.dark-mode) .makan-academy *[style*="color:#ffffff"] { color: #0f172a !important; }
+html:not(.dark-mode) .makan-academy div[style*="background:'rgba(255,255,255,0.04)'"],
+html:not(.dark-mode) .makan-academy div[style*="background:rgba(255,255,255,0.04)"],
+html:not(.dark-mode) .makan-academy div[style*="background: rgba(255,255,255,0.04)"],
+html:not(.dark-mode) .makan-academy div[style*="background:rgba(255,255,255,0.03)"],
+html:not(.dark-mode) .makan-academy div[style*="background: rgba(255,255,255,0.03)"] {
+  background: rgba(248,250,252,0.9) !important;
+  border-color: rgba(148,163,184,0.2) !important;
+}
+html:not(.dark-mode) .makan-academy div[style*="background:rgba(26,58,255,0.06)"],
+html:not(.dark-mode) .makan-academy div[style*="background: rgba(26,58,255,0.06)"],
+html:not(.dark-mode) .makan-academy div[style*="background:rgba(26,58,255,0.08)"],
+html:not(.dark-mode) .makan-academy div[style*="background: rgba(26,58,255,0.08)"] {
+  background: rgba(79,70,229,0.06) !important;
+}
+html:not(.dark-mode) .makan-academy h2 { color: #0f172a !important; }
+html:not(.dark-mode) .makan-academy h3,
+html:not(.dark-mode) .makan-academy h4 { color: #1e293b !important; }
+html:not(.dark-mode) .makan-academy p { color: #475569 !important; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — VIEW TOGGLE (كانبان / تقرير)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-view-toggle {
+  background: #090e1c !important;
+  border: 1px solid #3e4f72 !important;
+  border-radius: 10px !important;
+}
+html.dark-mode .makan-view-btn {
+  background: transparent !important;
+  color: #9aabcc !important;
+  border: none !important;
+}
+html.dark-mode .makan-view-btn--active {
+  background: #0d1526 !important;
+  color: #e8eeff !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — TOOL BUTTONS (فلتر / المراحل / إضافة)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-btn-tool {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-btn-tool:hover {
+  background: rgba(26,58,255,0.10) !important;
+  border-color: rgba(26,58,255,0.35) !important;
+  color: #7a9fff !important;
+}
+/* Active filter tool button */
+html.dark-mode .makan-btn-tool[style*="background:#1a3aff"],
+html.dark-mode .makan-btn-tool[style*="background: #1a3aff"] {
+  background: #1a3aff !important;
+  color: #ffffff !important;
+  border-color: #1a3aff !important;
+}
+
+/* PDF export button */
+html.dark-mode .makan-btn-pdf {
+  background: rgba(124,58,237,0.12) !important;
+  border-color: rgba(124,58,237,0.3) !important;
+  color: #b39dfd !important;
+}
+/* CSV upload button */
+html.dark-mode .makan-btn-csv {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+/* Excel upload button */
+html.dark-mode .makan-btn-excel {
+  background: rgba(22,163,74,0.10) !important;
+  border-color: rgba(22,163,74,0.3) !important;
+  color: #4ade80 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — CANCEL BUTTON (class + attribute-selector fallback)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-btn-cancel,
+html.dark-mode .makan-main button[style*="background:'#fff'"][style*="color:'#64748b'"],
+html.dark-mode .makan-main button[style*="background:#fff"][style*="color:#64748b"],
+html.dark-mode .makan-modal button[style*="background:'#fff'"][style*="color:'#64748b'"],
+html.dark-mode .makan-modal button[style*="background:#fff"][style*="color:#64748b"] {
+  background: transparent !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-btn-cancel:hover {
+  background: rgba(62,79,114,0.15) !important;
+  color: #e8eeff !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — FILTER PILLS (Match Engine + Listings)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-filter-pill {
+  background: #090e1c !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-filter-pill:hover {
+  border-color: rgba(26,58,255,0.4) !important;
+  color: #7a9fff !important;
+}
+html.dark-mode .makan-filter-pill--active {
+  background: rgba(26,58,255,0.15) !important;
+  border-color: rgba(26,58,255,0.5) !important;
+  color: #7a9fff !important;
+}
+/* Solid active (bed count pills) */
+html.dark-mode .makan-filter-pill--active.makan-filter-pill--solid {
+  background: #1a3aff !important;
+  color: #ffffff !important;
+  border-color: #1a3aff !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — LISTINGS TAB BUTTONS (الوحدات / إضافة يدوي / CSV)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-listings-tab-btn {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-listings-tab-btn--active {
+  background: rgba(26,58,255,0.12) !important;
+  border-color: rgba(26,58,255,0.4) !important;
+  color: #7a9fff !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — LISTINGS PANEL TEXT + CARDS
+   ══════════════════════════════════════════════════════════════════════════ */
+/* Page title */
+html.dark-mode .makan-main h1[style*="color:#0f172a"],
+html.dark-mode .makan-main h1[style*="color: #0f172a"] {
+  color: #e8eeff !important;
+}
+html.dark-mode .makan-main p[style*="color:#64748b"],
+html.dark-mode .makan-main p[style*="color: #64748b"] {
+  color: #9aabcc !important;
+}
+/* Card text inside listings */
+html.dark-mode .makan-card div[style*="color:#0f172a"],
+html.dark-mode .makan-card span[style*="color:#0f172a"] {
+  color: #e8eeff !important;
+}
+html.dark-mode .makan-card div[style*="color:#475569"],
+html.dark-mode .makan-card span[style*="color:#475569"] {
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-card div[style*="color:#999"],
+html.dark-mode .makan-card span[style*="color:#999"],
+html.dark-mode .makan-card div[style*="color: #999"],
+html.dark-mode .makan-card span[style*="color: #999"],
+html.dark-mode .makan-card div[style*="color:#aaa"],
+html.dark-mode .makan-card span[style*="color:#aaa"],
+html.dark-mode .makan-card div[style*="color:#888"],
+html.dark-mode .makan-card span[style*="color:#888"],
+html.dark-mode .makan-card div[style*="color:#bbb"],
+html.dark-mode .makan-card div[style*="color:#94a3b8"] {
+  color: #9aabcc !important;
+}
+/* Agent ID box */
+html.dark-mode .makan-card div[style*="background:rgba(241,245,249,0.7)"],
+html.dark-mode .makan-card div[style*="background: rgba(241,245,249"] {
+  background: rgba(62,79,114,0.2) !important;
+  color: #9aabcc !important;
+}
+/* Owner info bar */
+html.dark-mode .makan-card div[style*="background:#fff8f5"],
+html.dark-mode .makan-card div[style*="background: #fff8f5"] {
+  background: rgba(245,166,35,0.08) !important;
+  border-color: rgba(245,166,35,0.2) !important;
+}
+html.dark-mode .makan-card span[style*="color:#c84b00"] {
+  color: #f5a623 !important;
+}
+/* Ready/Off-plan badge */
+html.dark-mode .makan-card span[style*="background:#e8f5e9"],
+html.dark-mode .makan-card span[style*="background: #e8f5e9"] {
+  background: rgba(0,230,118,0.10) !important;
+  border-color: rgba(0,230,118,0.2) !important;
+  color: #00e676 !important;
+}
+html.dark-mode .makan-card span[style*="background:#fff8e1"],
+html.dark-mode .makan-card span[style*="background: #fff8e1"] {
+  background: rgba(245,166,35,0.10) !important;
+  border-color: rgba(245,166,35,0.2) !important;
+  color: #f5a623 !important;
+}
+/* Reserved bar */
+html.dark-mode .makan-card div[style*="background:rgba(239,246,255"],
+html.dark-mode .makan-card div[style*="background: rgba(239,246,255"] {
+  background: rgba(26,58,255,0.08) !important;
+  border-color: rgba(26,58,255,0.2) !important;
+}
+/* Listings form section headers */
+html.dark-mode .makan-main div[style*="color:#aaa"][style*="textTransform:uppercase"],
+html.dark-mode .makan-main div[style*="color: #aaa"][style*="text-transform: uppercase"] {
+  color: #3e4f72 !important;
+  border-color: rgba(62,79,114,0.3) !important;
+}
+/* Form toggle buttons (جاهزة / على الخارطة) */
+html.dark-mode .makan-main button[style*="background:'#fff'"][style*="borderRadius:10"],
+html.dark-mode .makan-main button[style*="background:#fff"][style*="border-radius: 10px"] {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — TEAM VIEW (names, emails, agentId)
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-team-name {
+  color: #e8eeff !important;
+}
+html.dark-mode .makan-team-email {
+  color: #9aabcc !important;
+}
+html.dark-mode .makan-page-title {
+  color: #e8eeff !important;
+}
+html.dark-mode .makan-section-title {
+  color: #e8eeff !important;
+}
+/* Team row separator */
+html.dark-mode .makan-team-row {
+  border-bottom-color: rgba(62,79,114,0.3) !important;
+}
+/* Agent ID pill */
+html.dark-mode .makan-agent-id {
+  color: #7a9fff !important;
+  background: rgba(26,58,255,0.12) !important;
+}
+/* Team stat mini-boxes */
+html.dark-mode .makan-card div[style*="background:rgba(79,70,229,0.06)"],
+html.dark-mode .makan-card div[style*="background: rgba(79,70,229,0.06)"] {
+  background: rgba(26,58,255,0.10) !important;
+  border-color: rgba(26,58,255,0.2) !important;
+}
+html.dark-mode .makan-card div[style*="background:rgba(34,197,94,0.06)"],
+html.dark-mode .makan-card div[style*="background: rgba(34,197,94,0.06)"] {
+  background: rgba(0,230,118,0.08) !important;
+  border-color: rgba(0,230,118,0.15) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — STAGES MANAGER MODAL (extra overrides)
+   ══════════════════════════════════════════════════════════════════════════ */
+/* Stage list item rows */
+html.dark-mode .makan-modal div[style*="background:#f8fafc"],
+html.dark-mode .makan-modal div[style*="background: #f8fafc"] {
+  background: rgba(255,255,255,0.03) !important;
+  border-color: #3e4f72 !important;
+}
+/* Reorder up/down buttons */
+html.dark-mode .makan-modal button[style*="background:#f1f5f9"],
+html.dark-mode .makan-modal button[style*="background: #f1f5f9"] {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: #3e4f72 !important;
+  color: #9aabcc !important;
+}
+/* Delete button */
+html.dark-mode .makan-modal button[style*="background:#fff2f2"],
+html.dark-mode .makan-modal button[style*="background: #fff2f2"] {
+  background: rgba(220,38,38,0.10) !important;
+  border-color: rgba(220,38,38,0.25) !important;
+  color: #ff6b6b !important;
+}
+/* Stage name text inside rows */
+html.dark-mode .makan-modal div[style*="color:#0f172a"],
+html.dark-mode .makan-modal span[style*="color:#0f172a"] {
+  color: #e8eeff !important;
+}
+html.dark-mode .makan-modal div[style*="color:#94a3b8"],
+html.dark-mode .makan-modal span[style*="color:#94a3b8"] {
+  color: #9aabcc !important;
+}
+/* "Add new stage" section */
+html.dark-mode .makan-modal div[style*="background:#f0f9ff"],
+html.dark-mode .makan-modal div[style*="background: #f0f9ff"] {
+  background: rgba(26,58,255,0.06) !important;
+  border-color: rgba(26,58,255,0.25) !important;
+}
+html.dark-mode .makan-modal div[style*="color:#0284c7"],
+html.dark-mode .makan-modal span[style*="color:#0284c7"] {
+  color: #00d4ff !important;
+}
+/* Inline edit form bg */
+html.dark-mode .makan-modal div[style*="background:#fff"][style*="border-top"],
+html.dark-mode .makan-modal div[style*="background: #fff"][style*="borderTop"] {
+  background: rgba(255,255,255,0.03) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — ORG CHART SVG LINES
+   ══════════════════════════════════════════════════════════════════════════ */
+html.dark-mode .makan-orgchart-line {
+  stroke: rgba(122,159,255,0.45) !important;
+  stroke-width: 2 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   TRANSITIONS — extended
+   ══════════════════════════════════════════════════════════════════════════ */
+.makan-view-toggle, .makan-view-btn, .makan-btn-tool,
+.makan-btn-cancel, .makan-filter-pill, .makan-listings-tab-btn,
+.makan-team-name, .makan-team-email, .makan-team-row,
+.makan-agent-id, .makan-page-title, .makan-section-title {
+  transition: background 0.2s ease, border-color 0.2s ease,
+              color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (max-width: 767px)
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* ══ HEADER ══════════════════════════════════════════════════════════════ */
+  .makan-app-header {
+    padding: 0 10px !important;
+    height: 50px !important;
+    border-radius: 14px !important;
+    gap: 6px !important;
+  }
+  .makan-nav-desktop {
+    display: none !important;
+  }
+  /* Hide logo divider line */
+  .makan-app-header > div[style*="width:1"] {
+    display: none !important;
+  }
+  /* Make logo flex:1 on mobile to push controls right */
+  .makan-app-header > div:first-child {
+    flex: 1 !important;
+  }
+  /* Compact header right-controls — hide lang select + sync dot */
+  .makan-header-controls select { display: none !important; }
+  /* Sync dot — hide on mobile to save space */
+  .makan-header-controls > div:first-child { display: none !important; }
+  /* Compact user pill — hide name text, keep avatar */
+  .makan-header-controls > div > div { display: none !important; }
+  /* Compact user pill padding */
+  .makan-header-controls > div {
+    padding: 3px !important;
+    border-radius: 50% !important;
+  }
+  /* Shortlist — hide on mobile header (accessible from bottom nav) */
+  .makan-header-controls > button:not(.makan-dark-toggle):not(:last-child) {
+    display: none !important;
+  }
+  /* Logout — icon only */
+  .makan-logout-text { display: none !important; }
+  .makan-header-controls > button:last-child {
+    padding: 6px 8px !important;
+  }
+
+  /* ══ MAIN CONTENT ════════════════════════════════════════════════════════ */
+  main {
+    padding: 0.85rem 0.75rem 5.5rem !important;
+    max-width: 100% !important;
+  }
+  /* Header wrapper padding */
+  body > div > div:first-child {
+    padding: 8px 8px 0 !important;
+  }
+
+  /* ══ HIDE DESKTOP SIDEBAR ════════════════════════════════════════════════ */
+  .makan-sidebar { display: none !important; }
+  /* Sidebar-mode main fills full width */
+  .makan-main { margin-right: 0 !important; }
+
+  /* ══ PAGE TITLES ══════════════════════════════════════════════════════════ */
+  .makan-page-title { font-size: 17px !important; }
+  .makan-section-title { font-size: 12px !important; }
+
+  /* ══ STAT CARDS — 2-column grid ══════════════════════════════════════════ */
+  .makan-stat-card {
+    min-width: 0 !important;
+    flex: 1 1 calc(50% - 6px) !important;
+    padding: 0.85rem 1rem !important;
+    border-radius: 12px !important;
+  }
+  .makan-stat-value { font-size: 20px !important; }
+  .makan-stat-label { font-size: 10px !important; }
+  .makan-stat-sub   { font-size: 11px !important; }
+
+  /* ══ CARDS — full width ══════════════════════════════════════════════════ */
+  .makan-card {
+    border-radius: 12px !important;
+  }
+
+  /* ══ KANBAN — horizontal scroll ══════════════════════════════════════════ */
+  .makan-kanban-col {
+    min-width: 230px !important;
+    max-width: 250px !important;
+    flex-shrink: 0 !important;
+    border-radius: 12px !important;
+  }
+  .makan-kanban-card {
+    border-radius: 10px !important;
+  }
+  .makan-kanban-client { font-size: 12px !important; }
+  .makan-kanban-stage-name { font-size: 10px !important; }
+
+  /* ══ MODALS — bottom sheet ═══════════════════════════════════════════════ */
+  .makan-modal {
+    border-radius: 20px 20px 0 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    max-height: 88vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.3) !important;
+  }
+
+  /* ══ VIEW TOGGLE ══════════════════════════════════════════════════════════ */
+  .makan-view-toggle { padding: 2px !important; }
+  .makan-view-btn { padding: 4px 10px !important; font-size: 10px !important; }
+
+  /* ══ FILTER PILLS — wrap ══════════════════════════════════════════════════ */
+  .makan-filter-pill {
+    padding: 5px 10px !important;
+    font-size: 11px !important;
+  }
+
+  /* ══ LISTINGS TAB BUTTONS ═════════════════════════════════════════════════ */
+  .makan-listings-tab-btn {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+  }
+
+  /* ══ TOOL BUTTONS ════════════════════════════════════════════════════════ */
+  .makan-btn-tool {
+    padding: 6px 10px !important;
+    font-size: 10px !important;
+  }
+
+  /* ══ CALENDAR ════════════════════════════════════════════════════════════ */
+  .makan-cal-wrapper { border-radius: 12px !important; }
+  .makan-cal-cell { min-height: 52px !important; }
+
+  /* ══ ORG CHART — horizontal scroll ══════════════════════════════════════ */
+  .makan-orgchart-canvas {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ══ AI CHAT ═════════════════════════════════════════════════════════════ */
+  .makan-ai-messages { border-radius: 12px !important; }
+  .makan-ai-input-bar { border-radius: 12px !important; font-size: 13px !important; }
+
+  /* ══ TEAM CHAT ═══════════════════════════════════════════════════════════ */
+  .makan-chat-sidebar { display: none !important; }
+  .makan-chat-wrapper { border-radius: 12px !important; }
+
+  /* ══ INLINE STYLE OVERRIDES — flex rows that should stack ════════════════ */
+  /* Stats row in admin dashboard — wrap to 2 cols */
+  .makan-main div[style*="display:'flex'"][style*="gap:'1rem'"][style*="flexWrap:'wrap'"],
+  .makan-main div[style*="display: flex"][style*="flex-wrap: wrap"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* Content areas with fixed maxWidth */
+  .makan-main > main > div[style*="maxWidth:600"],
+  .makan-main > main > div[style*="max-width: 600px"] {
+    max-width: 100% !important;
+  }
+
+  /* ══ HEADINGS inside content ═════════════════════════════════════════════ */
+  .makan-main h1 { font-size: 17px !important; }
+  .makan-main h2 { font-size: 15px !important; }
+  .makan-main h3 { font-size: 13px !important; }
+
+  /* ══ FORM INPUTS ═════════════════════════════════════════════════════════ */
+  .makan-modal input,
+  .makan-modal select,
+  .makan-modal textarea,
+  .makan-main input,
+  .makan-main select {
+    font-size: 14px !important; /* prevent iOS zoom */
+  }
+
+  /* ══ TYPOGRAPHY ══════════════════════════════════════════════════════════ */
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE — TABLET (768px - 1023px)
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .makan-stat-card {
+    min-width: 0 !important;
+    flex: 1 1 calc(50% - 8px) !important;
+  }
+  .makan-app-header {
+    height: 50px !important;
+  }
+  .makan-bottom-nav {
+    display: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   BOTTOM NAV — always hidden on desktop
+   ══════════════════════════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  .makan-bottom-nav {
+    display: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LIGHT MODE — Fix dark-hardcoded sub-views
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Light text → dark in light mode */
+html:not(.dark-mode) .makan-main [style*="color:#e8eeff"],
+html:not(.dark-mode) .makan-main [style*="color: #e8eeff"] { color: #0f172a !important; }
+
+html:not(.dark-mode) .makan-main [style*="color:#9aabcc"],
+html:not(.dark-mode) .makan-main [style*="color: #9aabcc"] { color: #64748b !important; }
+
+html:not(.dark-mode) .makan-main [style*="color:#7aa0ff"],
+html:not(.dark-mode) .makan-main [style*="color: #7aa0ff"] { color: #4F46E5 !important; }
+
+html:not(.dark-mode) .makan-main [style*="color:#3e4f72"],
+html:not(.dark-mode) .makan-main [style*="color: #3e4f72"] { color: #94a3b8 !important; }
+
+/* Near-transparent dark backgrounds → white cards in light mode */
+html:not(.dark-mode) .makan-main [style*="background:rgba(255,255,255,0.04)"],
+html:not(.dark-mode) .makan-main [style*="background: rgba(255,255,255,0.04)"],
+html:not(.dark-mode) .makan-main [style*="background:rgba(255,255,255,0.05)"],
+html:not(.dark-mode) .makan-main [style*="background: rgba(255,255,255,0.05)"],
+html:not(.dark-mode) .makan-main [style*="background:rgba(255,255,255,0.06)"],
+html:not(.dark-mode) .makan-main [style*="background: rgba(255,255,255,0.06)"],
+html:not(.dark-mode) .makan-main [style*="background:rgba(255,255,255,0.07)"],
+html:not(.dark-mode) .makan-main [style*="background: rgba(255,255,255,0.07)"] {
+  background: #ffffff !important;
+  border-color: rgba(226,232,240,0.7) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+}
+
+/* Dark inputs → light inputs */
+html:not(.dark-mode) .makan-main input[style*="rgba(255,255,255,0.05)"],
+html:not(.dark-mode) .makan-main input[style*="rgba(255,255,255,0.06)"],
+html:not(.dark-mode) .makan-main textarea[style*="rgba(255,255,255,0.05)"],
+html:not(.dark-mode) .makan-main textarea[style*="rgba(255,255,255,0.06)"],
+html:not(.dark-mode) .makan-main select[style*="rgba(255,255,255,0.05)"] {
+  background: #f8fafc !important;
+  border-color: rgba(226,232,240,0.8) !important;
+  color: #0f172a !important;
+}
+
+/* Dark overlay backgrounds */
+html:not(.dark-mode) .makan-main [style*="background:rgba(9,14,28"],
+html:not(.dark-mode) .makan-main [style*="background:rgba(13,21,38"],
+html:not(.dark-mode) .makan-main [style*="background:rgba(6,10,20"],
+html:not(.dark-mode) .makan-main [style*="background:#060a14"],
+html:not(.dark-mode) .makan-main [style*="background:#090e1c"],
+html:not(.dark-mode) .makan-main [style*="background:#0d1526"] {
+  background: #f8fafc !important;
+}
+
+/* Invisible borders in light mode */
+html:not(.dark-mode) .makan-main [style*="border:1px solid rgba(255,255,255,0.08)"],
+html:not(.dark-mode) .makan-main [style*="border: 1px solid rgba(255,255,255,0.08)"],
+html:not(.dark-mode) .makan-main [style*="border:1px solid rgba(255,255,255,0.1)"],
+html:not(.dark-mode) .makan-main [style*="border: 1px solid rgba(255,255,255,0.1)"] {
+  border-color: rgba(226,232,240,0.7) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE — Fix remaining issues
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Headings always white in dark mode */
+html.dark-mode .makan-main h1,
+html.dark-mode .makan-main h2,
+html.dark-mode .makan-main h3,
+html.dark-mode .makan-main h4,
+html.dark-mode .makan-main h5,
+html.dark-mode .makan-main h6 { color: #ffffff !important; }
+
+/* Dark text → white in dark mode */
+html.dark-mode .makan-main [style*="color:#0f172a"],
+html.dark-mode .makan-main [style*="color: #0f172a"],
+html.dark-mode .makan-main [style*="color:#1e293b"],
+html.dark-mode .makan-main [style*="color:#334155"],
+html.dark-mode .makan-main [style*="color:#374151"],
+html.dark-mode .makan-main [style*="color:#111827"],
+html.dark-mode .makan-main [style*="color:black"],
+html.dark-mode .makan-main [style*="color:#000000"] { color: #e8eeff !important; }
+
+/* Icons in dark mode */
+html.dark-mode .makan-main svg { opacity: 0.9; }

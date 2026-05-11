@@ -1,0 +1,9 @@
+node_modules/
+release/
+dist/
+.firebase/
+.DS_Store
+*.local
+.env
+*.log
+.claude/
